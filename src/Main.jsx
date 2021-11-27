@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {STAFFS} from "./Components/StaffList/staffs.jsx";
+import {STAFFS,DEPARTMENTS,ROLE} from "./Components/StaffList/staffs.jsx";
 
 //Control
 function AppData() {
@@ -18,7 +18,10 @@ function Hienthi1(props) {
     </div>
     <div className="chiaBang">
       <div className="contentBody">
+        {/* Hiển Thị Hết Nhân viên */}
         {/* {props.name.map( e => <Hienthi2 childField={e} />)} */}
+
+        {/* Hiện thị 6 nhân viên đầu */}
         <Hienthi2 childField={props.name[0]} />
         <Hienthi2 childField={props.name[1]} />
         <Hienthi2 childField={props.name[2]} />
@@ -33,7 +36,11 @@ function Hienthi1(props) {
 
 //noidung Body
 function Hienthi2(props) {
-  return <div className="contentName" key={STAFFS.id}>{props.childField}</div>
+  return <div onClick = {HienthiThongTin()} id={STAFFS.id} className="contentName" key={STAFFS.id}>{props.childField}</div>
+}
+function HienthiThongTin(props) {
+  var HienthiTT = STAFFS.map((staff)=><div> {staff.name, staff.doB, staff.department,staff.salaryScale}</div>)
+  return <Hienthi2 thongtin = {HienthiTT} /> 
 }
 
 
