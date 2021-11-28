@@ -8,7 +8,7 @@ function AppData() {
   return (
     <Hienthi1 name={controlData} />
   );
-}
+};
 
 //Body
 function Hienthi1(props) {
@@ -32,16 +32,31 @@ function Hienthi1(props) {
       <p className="contentP">Bấm vào tên nhân viên để xem thông tin</p>
     </div>
   </div>
-}
+};
 
 //noidung Body
 function Hienthi2(props) {
-  return <div onClick = {HienthiThongTin()} id={STAFFS.id} className="contentName" key={STAFFS.id}>{props.childField}</div>
-}
-function HienthiThongTin(props) {
-  var HienthiTT = STAFFS.map((staff)=><div> {staff.name, staff.doB, staff.department,staff.salaryScale}</div>)
-  return <Hienthi2 thongtin = {HienthiTT} /> 
-}
+  return <div  className="contentName" key={STAFFS.id}>{props.childField}</div>
+};
+// function LayGiaTriPhongBan() {
+//   var giaTriPhongBan=DEPARTMENTS.map(DEPARTMENT => <div>{DEPARTMENT.name}</div>)
+//   return <HienthiThongTin Phongban={giaTriPhongBan} />
+// };
+
+
+// Tao ham lay thong tin 
+function LayThongTin(props) {
+  var HienthiTT=STAFFS.map((staff) =>
+    <div> Họ Và Tên:{staff.name}
+      Ngày vào công ty:{staff.doB}
+      Phòng ban :{staff.department}
+      Số ngày nghỉ còn lại: {staff.annualLeave}
+      Số ngày làm thêm: {staff.overTime}
+    </div>)
+  return  {HienthiTT}
+};
+// Hien thi thong tin nhan vien
+
 
 
 export default AppData;
