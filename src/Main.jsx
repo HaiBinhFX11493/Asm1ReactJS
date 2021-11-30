@@ -55,10 +55,11 @@ function LayThongTin() {
     </div>)
   return <RenderKhungNv hienthinv ={HienthiNv}/>
 };
-// Hien thi thong tin nhan vien
+// lam khung hien thi
 function RenderKhungNv(props) {
   return <div>{props.HienthiTT.map(e => <LayThongTin hienthinv ={e}/>)}</div>
 };
+// tao ham rende thong tin khi click 
 function HienThiThongTin(props) {
   return <div>{props.hienthinv}</div>
 }
