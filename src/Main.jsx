@@ -36,7 +36,7 @@ function Hienthi1(props) {
 
 //noidung Body
 function Hienthi2(props) {
-  return <div  className="contentName" key={STAFFS.id}>{props.childField}</div>
+  return <div onClick={HienThiThongTin} className="contentName" key={STAFFS.id}>{props.childField}</div>
 };
 // function LayGiaTriPhongBan() {
 //   var giaTriPhongBan=DEPARTMENTS.map(DEPARTMENT => <div>{DEPARTMENT.name}</div>)
@@ -45,18 +45,24 @@ function Hienthi2(props) {
 
 
 // Tao ham lay thong tin 
-function LayThongTin(props) {
-  var HienthiTT=STAFFS.map((staff) =>
+function LayThongTin() {
+  var HienthiNv=STAFFS.map((staff) =>
     <div> Họ Và Tên:{staff.name}
       Ngày vào công ty:{staff.doB}
       Phòng ban :{staff.department}
       Số ngày nghỉ còn lại: {staff.annualLeave}
       Số ngày làm thêm: {staff.overTime}
     </div>)
-  return  {HienthiTT}
+  return <RenderKhungNv hienthinv ={HienthiNv}/>
 };
 // Hien thi thong tin nhan vien
-
+function RenderKhungNv(props) {
+  return <div>{props.HienthiTT.map(e => <LayThongTin hienthinv ={e}/>)}</div>
+};
+function HienThiThongTin(props) {
+  return <div>{props.hienthinv}</div>
+}
+  
 
 
 export default AppData;
