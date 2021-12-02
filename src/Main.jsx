@@ -3,8 +3,7 @@ import './App.css';
 import {STAFFS,DEPARTMENTS,ROLE} from "./Components/StaffList/staffs.jsx";
 import React,{useState} from 'react';
 
-
-//Control
+//Control Body
 function AppData() {
   return (
     <React.Fragment>
@@ -12,45 +11,40 @@ function AppData() {
       <BodyUI dataAPI={STAFFS} />
     </React.Fragment>
   );
-
 };
-
+// Hien thi title
 function TitleUI() {
-  return <div className="App">
-    <div className="HeadingTop">
-      Ứng dụng quản lý nhân sự v1.0
-    </div>
-  </div>
+  return (
+  <div className="HeadingTop">
+  Ứng dụng quản lý nhân sự v1.0
+</div>
+)
 };
 
-//Body
+//Hien thi Body
 function BodyUI({dataAPI}) {
+  // Hook useState
   const [getInfo,setGetInfo]=useState(null)
-
   const handleClick=(name) => {
-
     setGetInfo(name)
-  }
-
-
-  return <div className="App">
+  } 
+// Render -----
+  return <React.Fragment >
     <div className="chiaBang">
       <div className="contentBody">
-        {dataAPI.map((e,i) => {
-          return <Employee hienthi={handleClick} key={i} employee={e}  > </Employee>
+        {dataAPI.map((element,index) => {
+          return <Employee hienthi={handleClick} key={index} employee={element}  > </Employee>
         })}
       </div>
       <p className="contentP">Bấm vào tên nhân viên để xem thông tin</p>
     </div>
     <GetInfo data={getInfo}>
     </GetInfo>
-  </div>
+  </React.Fragment>
 };
 
 function GetInfo({data}) {
-  // console.log("🚀 ~ file: Main.jsx ~ line 56 ~ GetInfo ~ department",data&&data.department!=null? data.department:null)
-
-  return <>
+  return <React.Fragment>
     {data&&<div>
       <p>Họ Và Tên:{data.name} </p>
       <p>Ngày vào công ty:{data.doB}</p>
@@ -58,7 +52,7 @@ function GetInfo({data}) {
       <p>Số ngày nghỉ còn lại: {data.annualLeave}</p>
       <p>Số ngày làm thêm: {data.overTime}</p>
     </div>}
-  </>
+  </React.Fragment>
 };
 
 function Employee({employee,hienthi}) {
