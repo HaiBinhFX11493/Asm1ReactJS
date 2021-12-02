@@ -1,16 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import {STAFFS,DEPARTMENTS,ROLE} from "./Components/StaffList/staffs.jsx";
-import React,{useState} from 'react';
-
+import {useState} from 'react';
 
 //Control
 function AppData() {
   return (
-    <React.Fragment>
+    <>
       <TitleUI />
       <BodyUI dataAPI={STAFFS} />
-    </React.Fragment>
+    </>
   );
 
 };
@@ -32,7 +31,6 @@ function BodyUI({dataAPI}) {
     setGetInfo(name)
   }
 
-
   return <div className="App">
     <div className="chiaBang">
       <div className="contentBody">
@@ -48,7 +46,7 @@ function BodyUI({dataAPI}) {
 };
 
 function GetInfo({data}) {
-  // console.log("🚀 ~ file: Main.jsx ~ line 56 ~ GetInfo ~ department",data&&data.department!=null? data.department:null)
+  console.log("🚀 ~ file: Main.jsx ~ line 56 ~ GetInfo ~ department",data&&data.department!=null? data.department:null)
 
   return <>
     {data&&<div>

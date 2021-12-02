@@ -1,4 +1,4 @@
-export const DEPARTMENTS =
+export const DEPARTMENTS=
     [
         {
             id: "Dept01",
@@ -26,11 +26,14 @@ export const DEPARTMENTS =
             numberOfStaff: 11
         }
     ]
-export const ROLE = {
+
+
+export const ROLE={
     NORMAL_STAFF: "Nhân viên",
     MANAGER_STAFF: "Quản lý"
 }
-export const STAFFS =
+
+export const STAFFS=
     [
         {
             id: 0,
