@@ -1,8 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import {STAFFS,DEPARTMENTS,ROLE} from "./Components/StaffList/staffs.jsx";
-import React,{useState} from 'react';
 
+import './App.css';
+import {STAFFS} from "./Components/StaffList/staffs.jsx";
+import React,{useState} from 'react';
+import dateFormat, { masks } from "dateformat";
+const now = new Date();
 //Control Body
 function AppData() {
   return (
@@ -33,7 +34,7 @@ function BodyUI({dataAPI}) {
     <div className="chiaBang">
       <div className="contentBody">
         {dataAPI.map((element,index) => {
-          return <Employee hienthi={handleClick} key={index} employee={element}  > </Employee>
+          return <Employees hienthi={handleClick} key={index} employee={element} > </Employees>
         })}
       </div>
       <p className="contentP">Bấm vào tên nhân viên để xem thông tin</p>
@@ -47,7 +48,7 @@ function GetInfo({data}) {
   return <React.Fragment>
     {data&&<div>
       <p>Họ Và Tên:{data.name} </p>
-      <p>Ngày vào công ty:{data.doB}</p>
+      <p>Ngày vào công ty:{dateFormat(data.doB, "dd/mm/yyyy")}</p>
       <p>Phòng ban :{data.department.name}</p>
       <p>Số ngày nghỉ còn lại: {data.annualLeave}</p>
       <p>Số ngày làm thêm: {data.overTime}</p>
@@ -55,7 +56,7 @@ function GetInfo({data}) {
   </React.Fragment>
 };
 
-function Employee({employee,hienthi}) {
+function Employees({employee,hienthi}) {
   var name=employee.name
   return <div onClick={() => hienthi(employee)} className="contentName">{name}</div>
 };
