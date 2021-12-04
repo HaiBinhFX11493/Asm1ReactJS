@@ -2,8 +2,8 @@
 import './App.css';
 import {STAFFS} from "./Components/StaffList/staffs.jsx";
 import React,{useState} from 'react';
-import dateFormat, { masks } from "dateformat";
-const now = new Date();
+import dateFormat,{masks} from "dateformat";
+const now=new Date();
 //Control Body
 function AppData() {
   return (
@@ -16,21 +16,20 @@ function AppData() {
 // Hien thi title
 function TitleUI() {
   return (
-  <div className="HeadingTop">
-  Ứng dụng quản lý nhân sự v1.0
-</div>
-)
+    <div className="HeadingTop">
+      Ứng dụng quản lý nhân sự v1.0
+    </div>
+  )
 };
-
 //Hien thi Body
 function BodyUI({dataAPI}) {
   // Hook useState
   const [getInfo,setGetInfo]=useState(null)
   const handleClick=(name) => {
     setGetInfo(name)
-  } 
-// Render -----
-  return <React.Fragment >
+  }
+  // Render -----
+  return <div className="App" >
     <div className="chiaBang">
       <div className="contentBody">
         {dataAPI.map((element,index) => {
@@ -41,21 +40,21 @@ function BodyUI({dataAPI}) {
     </div>
     <GetInfo data={getInfo}>
     </GetInfo>
-  </React.Fragment>
+  </div>
 };
-
+// Funtion khi onClick
 function GetInfo({data}) {
-  return <React.Fragment>
-    {data&&<div>
+  return <div className="contentInfo">
+    {data&&<div className ="contentInfo2">
       <p>Họ Và Tên:{data.name} </p>
-      <p>Ngày vào công ty:{dateFormat(data.doB, "dd/mm/yyyy")}</p>
+      <p>Ngày vào công ty:{dateFormat(data.doB,"dd/mm/yyyy")}</p>
       <p>Phòng ban :{data.department.name}</p>
       <p>Số ngày nghỉ còn lại: {data.annualLeave}</p>
       <p>Số ngày làm thêm: {data.overTime}</p>
     </div>}
-  </React.Fragment>
+  </div>
 };
-
+// Hien thi table khi render bang map
 function Employees({employee,hienthi}) {
   var name=employee.name
   return <div onClick={() => hienthi(employee)} className="contentName">{name}</div>
