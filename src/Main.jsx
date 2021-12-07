@@ -1,70 +1,45 @@
 
 import './App.css';
-import {STAFFS} from "./Components/StaffList/staffs.jsx";
-import React,{useState} from 'react';
-import dateFormat,{masks} from "dateformat";
-const now=new Date();
-//Control Body
+import {Routes,Route,Link} from "react-router-dom";
+import NhanVien from "./pages/nhanVien";
+import BangLuong from "./pages/bangLuong";
+import PhongBan from "./pages/phongBan";
+import React from 'react';
+import styled from 'styled-components';
+import BotTomUI from "./BotTomUI";
+
+
+const HeadingTitle = styled.ul`
+color: white;
+padding-bottom: 20px;
+background-color: #1766f9;
+padding-top: 23px;
+font-size: 23px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+`
+
+// Hien thi title
 function AppData() {
   return (
     <React.Fragment>
-      <TitleUI />
-      <BodyUI dataAPI={STAFFS} />
+    <div >
+      <HeadingTitle>
+        <li>AVT</li>
+        <li><Link to="/nhan-vien">Nhân Viên</Link> </li>
+        <li><Link to="/PhongBan">Phòng Ban</Link></li>
+        <li><Link to="/BangLuong">Bảng Lương</Link></li>
+      </HeadingTitle>
+      <Routes>
+        <Route path="/nhan-vien" element={<NhanVien />} />
+        <Route path="/BangLuong" element={<BangLuong />} />
+        <Route path="/PhongBan" element={<PhongBan />} />
+      </Routes>
+    </div>
+    <BotTomUI />
     </React.Fragment>
-  );
-};
-// Hien thi title
-function TitleUI() {
-  return (
-    <div className="HeadingTop">
-     <div>Avt</div>
-     <div>Nhân Viên</div>
-     <div>Phòng Ban</div>
-     <div>Bảng lương</div>
-    </div>
-  )
-};
-//Hien thi Body
-function BodyUI({dataAPI}) {
-  // Hook useState
-  const [getInfo,setGetInfo]=useState(null)
-  const handleClick=(name) => {
-    setGetInfo(name)
-  }
-  // Render -----
-  return <div className="App" >
-    <div className="chiaBang">
-      <div className="contentBody">
-        {dataAPI.map((element,index) => {
-          return <Employees hienthi={handleClick} key={index} employee={element} > </Employees>
-        })}
-      </div>
-      <p className="contentP">Bấm vào tên nhân viên để xem thông tin</p>
-    </div>
-    <GetInfo data={getInfo}>
-    </GetInfo>
-  </div>
-};
-// Funtion khi onClick
-function GetInfo({data}) {
-  return <div className="contentInfo">
-    {data&&<div className="contentInfo2">
-      <p>Họ Và Tên:{data.name} </p>
-      <p>Ngày vào công ty:{dateFormat(data.doB,"dd/mm/yyyy")}</p>
-      <p>Phòng ban :{data.department.name}</p>
-      <p>Số ngày nghỉ còn lại: {data.annualLeave}</p>
-      <p>Số ngày làm thêm: {data.overTime}</p>
-    </div>}
-  </div>
-};
-// Hien thi table khi render bang map
-function Employees({employee,hienthi}) {
-  var image=employee.image
-  var name=employee.name
-  return<React.Fragment>
-  <div onClick={() => hienthi(employee)} className="contentName">{<img src={image} />}{name}</div>
-  </React.Fragment>
 
+  )
 };
 
 export default AppData;

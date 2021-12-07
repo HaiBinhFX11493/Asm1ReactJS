@@ -22,7 +22,7 @@
 }
 .contentBody{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .contentName{
   border-style: groove;
@@ -33,10 +33,7 @@
   max-width: 375px;
   border: solid;
 }
-.HeadingTop{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
+
 @media only screen and (max-width: 1024px) {
   .contentBody{
     display: grid;
