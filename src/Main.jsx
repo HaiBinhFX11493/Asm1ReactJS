@@ -17,7 +17,10 @@ function AppData() {
 function TitleUI() {
   return (
     <div className="HeadingTop">
-      Ứng dụng quản lý nhân sự v1.0
+     <div>Avt</div>
+     <div>Nhân Viên</div>
+     <div>Phòng Ban</div>
+     <div>Bảng lương</div>
     </div>
   )
 };
@@ -45,7 +48,7 @@ function BodyUI({dataAPI}) {
 // Funtion khi onClick
 function GetInfo({data}) {
   return <div className="contentInfo">
-    {data&&<div className ="contentInfo2">
+    {data&&<div className="contentInfo2">
       <p>Họ Và Tên:{data.name} </p>
       <p>Ngày vào công ty:{dateFormat(data.doB,"dd/mm/yyyy")}</p>
       <p>Phòng ban :{data.department.name}</p>
@@ -56,8 +59,12 @@ function GetInfo({data}) {
 };
 // Hien thi table khi render bang map
 function Employees({employee,hienthi}) {
+  var image=employee.image
   var name=employee.name
-  return <div onClick={() => hienthi(employee)} className="contentName">{name}</div>
+  return<React.Fragment>
+  <div onClick={() => hienthi(employee)} className="contentName">{<img src={image} />}{name}</div>
+  </React.Fragment>
+
 };
 
 export default AppData;
