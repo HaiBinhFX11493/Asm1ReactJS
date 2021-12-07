@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import BotTomUI from "./BotTomUI";
 
 
-const HeadingTitle = styled.ul`
+const HeadingTitle=styled.ul`
 color: white;
 padding-bottom: 20px;
 background-color: #1766f9;
@@ -17,26 +17,29 @@ padding-top: 23px;
 font-size: 23px;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
+`;
+const TitleLi= styled.li`
+color: white
 `
 
 // Hien thi title
 function AppData() {
   return (
     <React.Fragment>
-    <div >
-      <HeadingTitle>
-        <li>AVT</li>
-        <li><Link to="/nhan-vien">Nhân Viên</Link> </li>
-        <li><Link to="/PhongBan">Phòng Ban</Link></li>
-        <li><Link to="/BangLuong">Bảng Lương</Link></li>
-      </HeadingTitle>
-      <Routes>
-        <Route path="/nhan-vien" element={<NhanVien />} />
-        <Route path="/BangLuong" element={<BangLuong />} />
-        <Route path="/PhongBan" element={<PhongBan />} />
-      </Routes>
-    </div>
-    <BotTomUI />
+      <div >
+        <HeadingTitle>
+          <TitleLi><i class="fa fa-home" aria-hidden="true"></i></TitleLi>
+          <li><Link to="/nhan-vien"><i class="fa fa-users" aria-hidden="true">Nhân Viên</i></Link> </li>
+          <li><Link to="/PhongBan"><i class="fa fa-address-card-o" aria-hidden="true"></i>Phòng Ban</Link></li>
+          <li><Link to="/BangLuong"><i class="fa fa-money" aria-hidden="true"></i>Bảng Lương</Link></li>
+        </HeadingTitle>
+        <Routes>
+          <Route path="/nhan-vien" element={<NhanVien />} />
+          <Route path="/BangLuong" element={<BangLuong />} />
+          <Route path="/PhongBan" element={<PhongBan />} />
+        </Routes>
+      </div>
+      <BotTomUI />
     </React.Fragment>
 
   )
