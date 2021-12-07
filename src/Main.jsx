@@ -17,10 +17,22 @@ function AppData() {
 function TitleUI() {
   return (
     <div className="HeadingTop">
-     <div>Avt</div>
-     <div>Nhân Viên</div>
-     <div>Phòng Ban</div>
-     <div>Bảng lương</div>
+      <nav>
+        <ul>
+          <li>
+           <a href ="/">AVT</a>
+            </li>
+          <li>
+          <a href ="/">Nhân Viên</a>
+            </li>
+          <li>
+          <a href ="/">Phòng Ban</a>
+            </li>
+          <li>
+          <a href ="/">Bảng Lương</a>
+            </li>
+        </ul>
+      </nav>
     </div>
   )
 };
@@ -61,8 +73,8 @@ function GetInfo({data}) {
 function Employees({employee,hienthi}) {
   var image=employee.image
   var name=employee.name
-  return<React.Fragment>
-  <div onClick={() => hienthi(employee)} className="contentName">{<img src={image} />}{name}</div>
+  return <React.Fragment>
+    <div onClick={() => hienthi(employee)} className="contentName">{<img src={image} />}{name}</div>
   </React.Fragment>
 
 };
