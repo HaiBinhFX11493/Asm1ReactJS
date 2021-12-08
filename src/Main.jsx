@@ -29,9 +29,9 @@ function AppData() {
       <div >
         <HeadingTitle>
           <TitleLi><i class="fa fa-home" aria-hidden="true"></i></TitleLi>
-          <li><Link to="/nhan-vien"><i class="fa fa-users" aria-hidden="true">Nhân Viên</i></Link> </li>
-          <li><Link to="/PhongBan"><i class="fa fa-address-card-o" aria-hidden="true"></i>Phòng Ban</Link></li>
-          <li><Link to="/BangLuong"><i class="fa fa-money" aria-hidden="true"></i>Bảng Lương</Link></li>
+          <li><Link to="/nhan-vien"><i class="fa fa-users" aria-hidden="true"> Nhân Viên</i></Link> </li>
+          <li><Link to="/PhongBan"><i class="fa fa-address-card-o" aria-hidden="true"></i> Phòng Ban</Link></li>
+          <li><Link to="/BangLuong"><i class="fa fa-money" aria-hidden="true"></i> Bảng Lương</Link></li>
         </HeadingTitle>
         <Routes>
           <Route path="/nhan-vien" element={<NhanVien />} />

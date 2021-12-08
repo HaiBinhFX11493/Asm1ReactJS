@@ -33,6 +33,10 @@
   max-width: 375px;
   border: solid;
 }
+.BodyPhongBan{
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
 @media only screen and (max-width: 1024px) {
   .contentBody{
@@ -46,6 +50,9 @@
   background-color: wheat;
   text-align: center;
   }
+}
+li{
+  list-style: none;
 }
 @media only screen and (max-width: 375px) {
   .contentBody{
