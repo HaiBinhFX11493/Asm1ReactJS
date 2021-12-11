@@ -16,16 +16,16 @@ function BotTomUI() {
     return <BotTomFooter>
         <div><h3>Our Addres</h3>
             <p>121,Clear Water Bay Road Clear Water Bay,Kowloon HONGKONG </p>
-            <i class="fa fa-phone" aria-hidden="true">: +852 1234 5678</i>
-            <i class="fa fa-fax" aria-hidden="true"> +852 8765 4321</i>
-            <i class="fa fa-envelope" aria-hidden="true">confusion@food.net</i>
+            <i className="fa fa-phone" aria-hidden="true">: +852 1234 5678</i>
+            <i className="fa fa-fax" aria-hidden="true"> +852 8765 4321</i>
+            <i className="fa fa-envelope" aria-hidden="true">confusion@food.net</i>
         </div>
         <GridBotTomFooter>
-            <h1><a href="google.com"><i class="fa fa-google" aria-hidden="true"></i></a></h1>
-            <h1> <a href="facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></h1>
-            <h1> <a href="https://www.skype.com"><i class="fa fa-skype" aria-hidden="true"></i></a></h1>
-            <h1> <a href="https://www.youtube.com/"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></h1>
-            <h1> <a href="https://mail.google.com/mail/u/0/?pli=1"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></h1>
+            <h1><a href="google.com"><i className="fa fa-google" aria-hidden="true"></i></a></h1>
+            <h1> <a href="facebook.com"><i className="fa fa-facebook-official" aria-hidden="true"></i></a></h1>
+            <h1> <a href="https://www.skype.com"><i className="fa fa-skype" aria-hidden="true"></i></a></h1>
+            <h1> <a href="https://www.youtube.com/"><i className="fa fa-youtube-square" aria-hidden="true"></i></a></h1>
+            <h1> <a href="https://mail.google.com/mail/u/0/?pli=1"><i className="fa fa-envelope-o" aria-hidden="true"></i></a></h1>
         </GridBotTomFooter>
 
     </BotTomFooter>
