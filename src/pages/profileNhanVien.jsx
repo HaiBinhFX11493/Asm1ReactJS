@@ -1,32 +1,21 @@
 // Funtion khi onClick
 import {STAFFS} from "../Components/StaffList/staffs";
 import dateFormat,{masks} from "dateformat";
-import NhanVien from "./nhanVien";
-import {Routes,Route,Link} from "react-router-dom";
+import {useContext} from "react";
+import {Info} from "./nhanVien";
 
 
-function ProfileNv(employee) {
-    return (
-        <BodyUI dataAPI={STAFFS} />
-    )
-}
 
-function BodyUI({dataAPI}) {
+function ProfileNv() {
+    const info=useContext(value)
     return <div className="contentInfo">
-        {dataAPI.map((e,i) => {
-            return <DataNv data={e} />
-        })}
-    </div>
-};
-function DataNv({data}) {
-    return <div className="contentInfo">
-<div><img src={data.image} alt="avatar" /></div>
+        <div><img src={info.image} alt="avatar" /></div>
         {<div className="contentInfo2">
-            <p>Họ Và Tên:{data.name} </p>
-            <p>Ngày vào công ty:{dateFormat(data.doB,"dd/mm/yyyy")}</p>
-            <p>Phòng ban :{data.department.name}</p>
-            <p>Số ngày nghỉ còn lại: {data.annualLeave}</p>
-            <p>Số ngày làm thêm: {data.overTime}</p>
+            <p>Họ Và Tên:{info.name} </p>
+            <p>Ngày vào công ty:{dateFormat(info.doB,"dd/mm/yyyy")}</p>
+            <p>Phòng ban :{info.department.name}</p>
+            <p>Số ngày nghỉ còn lại: {info.annualLeave}</p>
+            <p>Số ngày làm thêm: {info.overTime}</p>
         </div>}
     </div>
 };

@@ -12,6 +12,7 @@ padding-left: 20px;
 
 
 function PhongBan() {
+   
    return <BodyUI dataAPI={DEPARTMENTS} />
 }
 

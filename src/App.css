@@ -41,6 +41,17 @@
   display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.HeadingTitle{
+  color: white;
+padding-bottom: 20px;
+background-color: #1766f9;
+padding-top: 23px;
+font-size: 23px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.TitleLi
+{color: white}
 
 @media only screen and (max-width: 1024px) {
   .contentBody{

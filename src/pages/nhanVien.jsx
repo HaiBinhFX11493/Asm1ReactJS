@@ -1,9 +1,11 @@
 import {STAFFS} from "../Components/StaffList/staffs";
-import React,{useState} from 'react';
-import dateFormat,{masks} from "dateformat";
+import React,{createContext} from 'react';
 import {Routes,Route,Link} from "react-router-dom";
+import { Information } from "../Main";
 
-const now=new Date();
+
+export const Infor = createContext()
+
 
 function NhanVien() {
     return (
@@ -26,12 +28,12 @@ function BodyUI({dataAPI}) {
 };
 
 // Hien thi table khi render bang map
-function Employees({employee,hienthi}) {
+function Employees({employee}) {
     var image=employee.image
     var name=employee.name
-    return <React.Fragment>
+    return <Infor.Provider value ={employee}>
         <li ><Link to="/./profileNhanVien"> <div className="contentName">{<img src={image} />}{name}</div></Link></li>
-    </React.Fragment>
+    </Infor.Provider>
 };
 
 export default NhanVien
