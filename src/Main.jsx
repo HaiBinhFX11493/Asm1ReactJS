@@ -5,19 +5,18 @@ import NhanVien from "./pages/nhanVien";
 import BangLuong from "./pages/bangLuong";
 import PhongBan from "./pages/phongBan";
 import ProfileNv from "./pages/profileNhanVien";
-import React , {createContext} from 'react';
+import React,{createContext} from 'react';
 import BotTomUI from "./BotTomUI";
 
 
- export const Information = createContext()
+
 
 
 
 // Hien thi title
 function AppData() {
-  return (
-    <Information.Provider value ={Information}>
-      <div >
+  return (<React.Fragment>
+  <div >
         <div className='HeadingTitle'>
           <li className='TitleLi'><i className="fa fa-home" aria-hidden="true"></i></li>
           <li><Link to="/nhan-vien"><i className="fa fa-users" aria-hidden="true"> Nhân Viên</i></Link> </li>
@@ -32,7 +31,8 @@ function AppData() {
         </Routes>
       </div>
       <BotTomUI />
-    </Information.Provider>
+       </React.Fragment>
+
 
   )
 };

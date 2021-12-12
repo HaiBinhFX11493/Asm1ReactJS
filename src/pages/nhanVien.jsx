@@ -1,10 +1,9 @@
 import {STAFFS} from "../Components/StaffList/staffs";
 import React,{createContext} from 'react';
 import {Routes,Route,Link} from "react-router-dom";
-import { Information } from "../Main";
 
 
-export const Infor = createContext()
+export const Infor=createContext()
 
 
 function NhanVien() {
@@ -31,7 +30,7 @@ function BodyUI({dataAPI}) {
 function Employees({employee}) {
     var image=employee.image
     var name=employee.name
-    return <Infor.Provider value ={employee}>
+    return <Infor.Provider>
         <li ><Link to="/./profileNhanVien"> <div className="contentName">{<img src={image} />}{name}</div></Link></li>
     </Infor.Provider>
 };
