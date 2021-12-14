@@ -15,7 +15,7 @@ padding-left: 20px;
 
 
 function BangLuong() {
-    return <BodyUI dataAPI={STAFFS}/>
+    return (<BodyUI dataAPI={STAFFS}/>)
 }
 
 function BodyUI({dataAPI}) {
