@@ -11,7 +11,6 @@ function NhanVien() {
 
 function BodyUI({dataAPI}) {
 
-
 	return (<div>
 		<li> <Link to="./profileNhanVien"> Nhan Vien </Link></li>
 		<div className="contentInfo">

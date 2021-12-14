@@ -5,11 +5,11 @@ import {Routes,Route,Link} from "react-router-dom";
 
 function ProfileNv() {
 	return (
-		<BodyUI dataAPI={STAFFS} />
+		<BodyUI  />
 	)
 }
 
-function BodyUI({dataAPI}) {
+function BodyUI() {
 
 	return (<div><li><Link to="/">Home</Link></li>
 	</div>)
