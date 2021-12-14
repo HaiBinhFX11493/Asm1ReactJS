@@ -30,7 +30,7 @@
 }
 .contentInfo{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .contentInfo2{
   padding-left: 20px;

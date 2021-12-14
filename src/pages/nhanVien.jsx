@@ -1,38 +1,37 @@
+
 import {STAFFS} from "../Components/StaffList/staffs";
-import React,{createContext} from 'react';
 import {Routes,Route,Link} from "react-router-dom";
 
 
-export const Infor=createContext()
-
-
 function NhanVien() {
-    return (
-        <BodyUI dataAPI={STAFFS} />)
+	return (
+		<BodyUI dataAPI={STAFFS} />
+	)
 }
-//Hien thi Body
-function BodyUI({dataAPI}) {
-    // Render -----
-    return <div className="App" >
-        <div className="chiaBang">
-            <h1>Nhân Viên</h1>
-            <div className="contentBody">
-                {dataAPI.map((element,index) => {
-                    return <Employees key={index} employee={element} > </Employees>
-                })}
-            </div>
-            <p className="contentP">Bấm vào tên nhân viên để xem thông tin</p>
-        </div>
-    </div>
-};
 
-// Hien thi table khi render bang map
-function Employees({employee}) {
-    var image=employee.image
-    var name=employee.name
-    return <Infor.Provider>
-        <li ><Link to="/./profileNhanVien"> <div className="contentName">{<img src={image} />}{name}</div></Link></li>
-    </Infor.Provider>
+function BodyUI({dataAPI}) {
+
+
+	return (<div>
+		<li> <Link to="./profileNhanVien"> Nhan Vien </Link></li>
+		<div className="contentInfo">
+			{dataAPI.map((e,i) => {
+				return <DataNv key={i} data={e} />
+			})}
+		</div></div>
+	)
+
+};
+function DataNv({data,}) {
+	return (
+		<>
+			<div className="contentInfo2">
+				<div  ><Link to="./profileNhanVien"> <img src={data.image} alt="avatar" />
+					<p>Họ Và Tên:{data.name} </p></Link>
+				</div>
+			</div>
+		</>
+	)
 };
 
 export default NhanVien

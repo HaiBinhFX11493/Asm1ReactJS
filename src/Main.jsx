@@ -94,6 +94,7 @@ import BotTomUI from "./BotTomUI";
 
 // Hien thi title
 function AppData() {
+	
   return (<React.Fragment>
   <div >
         <div className='HeadingTitle'>
@@ -103,6 +104,7 @@ function AppData() {
           <li><Link to="/BangLuong"><i className="fa fa-money" aria-hidden="true"></i> Bảng Lương</Link></li>
         </div>
         <Routes>
+          <Route path="/" element={<NhanVien />} />
           <Route path="/nhan-vien" element={<NhanVien />} />
           <Route path="/BangLuong" element={<BangLuong />} />
           <Route path="/PhongBan" element={<PhongBan />} />
