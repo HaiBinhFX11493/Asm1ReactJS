@@ -22,21 +22,37 @@
 }
 .contentBody{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .contentName{
   border-style: groove;
   margin: 5px;
+}
+.contentInfo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .contentInfo2{
   padding-left: 20px;
   max-width: 375px;
   border: solid;
 }
-.HeadingTop{
+.BodyPhongBan{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+.HeadingTitle{
+  color: white;
+padding-bottom: 20px;
+background-color: #1766f9;
+padding-top: 23px;
+font-size: 23px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.TitleLi
+{color: white}
+
 @media only screen and (max-width: 1024px) {
   .contentBody{
     display: grid;
@@ -49,6 +65,9 @@
   background-color: wheat;
   text-align: center;
   }
+}
+li{
+  list-style: none;
 }
 @media only screen and (max-width: 375px) {
   .contentBody{

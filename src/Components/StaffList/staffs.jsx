@@ -1,4 +1,4 @@
-import binh  from "../../images/alberto.png";
+import avartar  from "../../Components/images/alberto.png";
 export const DEPARTMENTS=
     [
         {
@@ -45,7 +45,7 @@ export const STAFFS=
             department: DEPARTMENTS[0],
             annualLeave: 1,
             overTime: 1,
-            image: binh,
+            image: avartar,
         },
         {
             id: 1,
@@ -56,7 +56,7 @@ export const STAFFS=
             department: DEPARTMENTS[1],
             annualLeave: 2,
             overTime: 3,
-            image: binh,
+            image: avartar,
         },
         {
             id: 2,
@@ -67,7 +67,7 @@ export const STAFFS=
             department: DEPARTMENTS[3],
             annualLeave: 4,
             overTime: 5,
-            image: binh,
+            image: avartar,
         },
         {
             id: 3,
@@ -78,7 +78,7 @@ export const STAFFS=
             department: DEPARTMENTS[2],
             annualLeave: 6,
             overTime: 7,
-            image: binh,
+            image: avartar,
         },
         {
             id: 4,
@@ -89,7 +89,7 @@ export const STAFFS=
             department: DEPARTMENTS[2],
             annualLeave: 8,
             overTime: 1,
-            image: binh,
+            image: avartar,
         },
         {
             id: 5,
@@ -100,7 +100,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 6,
@@ -111,7 +111,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 7,
@@ -122,7 +122,7 @@ export const STAFFS=
             department: DEPARTMENTS[2],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 8,
@@ -133,7 +133,7 @@ export const STAFFS=
             department: DEPARTMENTS[3],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 9,
@@ -144,7 +144,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 10,
@@ -155,7 +155,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 11,
@@ -166,7 +166,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 12,
@@ -177,7 +177,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 13,
@@ -188,7 +188,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 14,
@@ -199,7 +199,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
         {
             id: 15,
@@ -210,7 +210,7 @@ export const STAFFS=
             department: DEPARTMENTS[4],
             annualLeave: 9,
             overTime: 10,
-            image: binh,
+            image: avartar,
         },
 
     ]
