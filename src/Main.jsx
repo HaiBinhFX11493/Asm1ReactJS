@@ -7,22 +7,14 @@ import  InfomationEmpoyer from "./pages/profileNv";
 import BangLuong from "./pages/bangLuong";
 import PhongBan from "./pages/./phongBan";
 import BotTomUI from "./BotTomUI";
-import { STAFFS } from "./Components/StaffList/staffs";
-
+import { useStore,actions } from "./store";
 
 
 // Hien thi title
 function AppData() {
 	// 
-	
-const 	InforWithId =({data}) => {
-return (
-	<NhanVien infor ={this.state.data.filter((data)=> data.id === parserInt(data.param.dataID,10))[0]}>
+	const [state,dispatch] = useStore()
 
-	</NhanVien>
-)
-
-}
 	return (<React.Fragment>
 
 		<div className='HeadingTitle'>
@@ -33,7 +25,7 @@ return (
 		</div>
 		<Routes>
 			<Route path="/" element={<NhanVien />} />
-			<Route path="/menu/:id" element={<InfomationEmpoyer />} />
+			<Route path="//:id" element={(props) => <InfomationEmpoyer {...props}/>} />
 			<Route exact path="/PhongBan" element={<PhongBan />} />
 			<Route path="/BangLuong" element={<BangLuong />} />
 		</Routes>

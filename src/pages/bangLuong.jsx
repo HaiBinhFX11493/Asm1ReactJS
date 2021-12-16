@@ -20,8 +20,8 @@ function BangLuong() {
 
 function BodyUI({dataAPI}) {
     return <BodyBangLuong >
-{dataAPI.map((element)=><BoxContent>
-<h2>{element.name}</h2>
+{dataAPI.map((element,id)=><BoxContent key ={id}>
+<h2 >{element.name}</h2>
 <p>Mã nhân viên: {element.id}</p>
 <p>Hệ số lương: {element.salaryScale}</p>
 <p>Số giờ làm thêm: {element.overTime}</p>

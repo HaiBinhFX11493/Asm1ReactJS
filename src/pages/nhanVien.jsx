@@ -1,7 +1,7 @@
-import React ,{useState}from 'react'
+import React,{useState} from 'react'
 import {STAFFS} from "../Components/StaffList/staffs";
 import {Routes,Route,Link} from "react-router-dom";
-import  InfomationEmpoyer  from "./profileNv";
+
 
 
 function NhanVien() {
@@ -22,24 +22,24 @@ function BodyUI({dataAPI}) {
 			})}
 		</div></div>
 	)
-
 };
+
 function DataNv({data}) {
-	const getInfo = ({data})=>{
-		return  <InfomationEmpoyer data ={data}/>
-	}
-	return (<div>
-			<div className="contentInfo2">
-				<div key ={data.id} ><Link to={`menu/${data.id}`}> <img src={data.image} alt="avatar" />
+	return (<div data={data}>
+		<div className="contentInfo2">
+			<div key={data.id} >
+				<Link to={`/${data.id}`} >
+					<img src={data.image} alt="avatar" />
 					<p>Họ Và Tên:{data.name} </p>
-					</Link>
-				</div>
+				</Link>
 			</div>
-		<div onClick ={()=>getInfo}></div>	
-			</div>
-	)
-};
+		</div>
 
+	</div>
+	)
+
+
+};
 
 
 export default NhanVien

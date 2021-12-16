@@ -1,13 +1,12 @@
 import React from "react";
-import NhanVien from "./nhanVien";
 
 
-function InfomationEmpoyer({data}) {
-    console.log("🚀 ~ file: profileNv.jsx ~ line 6 ~ InfomationEmpoyer ~ data", data)
+function InfomationEmpoyer({}) {
+
 	
 	return (
 		<div >
-			<div>	</div>
+			<div>Hello	</div>
 
 		</div>
 
