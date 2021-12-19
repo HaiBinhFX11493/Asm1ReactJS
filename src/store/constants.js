@@ -1,1 +1,0 @@
-export const SET_INFO ='set_info'
