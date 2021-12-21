@@ -1,13 +1,11 @@
 import React from 'react';
 import {STAFFS} from "../Components/StaffList/staffs";
 import {Routes,Route,Link} from "react-router-dom";
-
-
-
+// lay gia tri 
 function BangLuong() {
 	return (<BodyUI dataAPI={STAFFS} />)
 }
-
+// hien thi body
 function BodyUI({dataAPI}) {
 	return (<div>
 		<div className="TopInfomationEmpoyer">
@@ -27,6 +25,7 @@ function BodyUI({dataAPI}) {
 		</div>
 	</div>)
 }
+// tinh luong
 function TinhLuong({dataAPI}) {
 	const basicSalary=3000000;
 	const overTimeSalary=200000;

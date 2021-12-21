@@ -2,7 +2,7 @@ import React from "react";
 import {Routes,Route,Link} from "react-router-dom";
 import dateFormat,{masks} from "dateformat";
 const now=new Date();
-
+// Hien thi body con cua NhanVien
 function InfomationEmpoyer({staff}) {
 
 

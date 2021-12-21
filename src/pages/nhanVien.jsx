@@ -1,15 +1,13 @@
 import React,{useState} from 'react'
 import {Routes,Route,Link} from "react-router-dom";
-
-
-
+// lay gia tri
 function NhanVien(props) {
 	return (
 		<BodyUI dataAPI={props.staffs} />
 	)
 }
 
-
+// Render gia tri bang map
 function BodyUI({dataAPI}) {
 
 	return (<div className="ContentBodyNhanVien">
@@ -21,7 +19,7 @@ function BodyUI({dataAPI}) {
 		</div></div>
 	)
 };
-
+// in ra body
 function DataNv({data}) {
 	return (<div >
 

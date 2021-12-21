@@ -2,12 +2,14 @@ import React from 'react';
 import {DEPARTMENTS} from "../Components/StaffList/staffs";
 
 
-
+// lay gia tri
 
 function PhongBan() {
 	return <BodyUI dataAPI={DEPARTMENTS} />
 }
 
+
+// in ra body
 function BodyUI({dataAPI}) {
 	return <div className="BodyPhongBan">
 		{dataAPI.map((e) =>

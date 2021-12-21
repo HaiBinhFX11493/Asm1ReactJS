@@ -14,7 +14,7 @@ import BotTomUI from "./BotTomUI";
 // Hien thi title
 function AppData() {
 	// 
-
+// useState
 	const [staffs,setStaffs]=useState(STAFFS)
 	const [departments,setDepartments]=useState(DEPARTMENTS)
 	const [role,setRole]=useState(ROLE)
@@ -25,7 +25,7 @@ function AppData() {
 	}
 
 	return (<React.Fragment>
-
+{/* dung router */}
 		<div className='HeadingTitle'>
 			<li className='TitleLi'><i className="fa fa-home" aria-hidden="true"></i></li>
 			<li><Link style={{textDecoration: 'none',color: 'white'}} to="/home"><i className="fa fa-users" aria-hidden="true"> Nhân Viên</i></Link> </li>
