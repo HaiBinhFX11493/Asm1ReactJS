@@ -10,12 +10,10 @@ function NhanVien(props) {
 }
 
 
-
 function BodyUI({dataAPI}) {
 
 	return (<div className="ContentBodyNhanVien">
 		<h2> Nhân Viên </h2>
-		
 		<div className="contentInfo">
 			{dataAPI.map((e) => {
 				return <DataNv key={e.id} data={e} />
