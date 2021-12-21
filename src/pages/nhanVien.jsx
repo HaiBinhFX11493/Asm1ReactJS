@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import {STAFFS} from "../Components/StaffList/staffs";
 import {Routes,Route,Link} from "react-router-dom";
 
 
@@ -14,8 +13,9 @@ function NhanVien(props) {
 
 function BodyUI({dataAPI}) {
 
-	return (<div>
+	return (<div className="ContentBodyNhanVien">
 		<h2> Nhân Viên </h2>
+		
 		<div className="contentInfo">
 			{dataAPI.map((e) => {
 				return <DataNv key={e.id} data={e} />
@@ -25,16 +25,20 @@ function BodyUI({dataAPI}) {
 };
 
 function DataNv({data}) {
-	return (<div className="ContentBorder" data={data}>
-		<div className="contentInfo2">
-			<div key={data.id} >
-				<Link  to={`/home/${data.id}`} >
-					<img className="ContentIMG" src={data.image} alt="avatar" />
-					<p className="CenterP">{data.name} </p>
-				</Link>
-			</div>
-		</div>
+	return (<div >
 
+		<div className="ContentBorder" data={data}>
+
+			<div className="contentInfo2">
+				<div key={data.id} >
+					<Link to={`/home/${data.id}`} >
+						<img className="ContentIMG" src={data.image} alt="avatar" />
+						<p className="CenterP">{data.name} </p>
+					</Link>
+				</div>
+			</div>
+
+		</div>
 	</div>
 	)
 

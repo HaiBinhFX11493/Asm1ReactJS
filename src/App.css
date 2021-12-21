@@ -1,6 +1,5 @@
-body{
-	 max-width: 1267px;
-}
+	
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -12,7 +11,7 @@ body{
   color: white;
 }
 .ContentIMG{
-    height: 120px;
+    height: 185px;
 	display: block;
     margin-left: auto;
     margin-right: auto;
@@ -45,12 +44,14 @@ body{
 }
 .contentInfo2{
   padding-left: 20px;
-
   margin: 15px;
+  color: black;
+	text-decoration: none;
 }
 .BodyPhongBan{
   display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+	margin-top: 15px;
 }
 .HeadingTitle{
   color: white;
@@ -77,23 +78,25 @@ text-decoration: none;
 }
 .FooterChild2{
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	padding-top: 100px;
     margin-bottom: 80px;
-	margin-right: 170px;
+    margin-right: 630px;
+
 
 }
 
 .ContentSocial{
-	font-size: 30px;
+	font-size: 50px;
 }
 .CenterP{
 	text-align: center;
+    color: black;
+    text-decoration: none;
 }
 .ProfileEmpoyee{
 	display: grid;
-	grid-template-columns: 30% 70%;
-	padding-bottom: 90px;
+    grid-template-columns: 18% 82%;
 
 }
 .AvatarProfileChild{
@@ -110,11 +113,34 @@ text-decoration: none;
 .Contentchild1{
 	font-size: 15px;
 }
-@media only screen and (max-width: 1024px) {
+.BodyBangLuong{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.ContentBangLuong{
+	border: solid;	
+	margin-right: 30px;
+	margin-bottom: 15px;
+}
+.ContentTinhLuong{
+	padding-left: 15px;
+    padding-bottom: 10px;
+	background-color: #f7f7f7;
+	border: inset;
+}
+.TopInfomationEmpoyer{
+	display: grid;
+	grid-template-columns: 3% 97%;
+}
+@media only screen and (max-width: 1024px)  {
   .contentBody{
     display: grid;
   grid-template-columns: 1fr 1fr ;
   padding: 20px;
+  }
+  .contentInfo{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
   }
   .HeadingTop{
     color: black;
@@ -122,9 +148,52 @@ text-decoration: none;
   background-color: wheat;
   text-align: center;
   }
+  .FooterChild1 {
+      padding-left: 1px;
+	  padding-right: 210px;
+	}
 }
+.AvatarProfileChild {
+    height: 200px;
+    margin: 20px;
+}
+.ProfileEmpoyee {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.TopInfomationEmpoyer {
+    display: grid;
+    grid-template-columns: 5% 95%;
+}
+.HeadingTitle {
+    color: white;
+    padding-bottom: 20px;
+    background-color: #1766f9;
+    padding-top: 23px;
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 4% 14% 14% 14% 54%;
+    text-decoration: none;
+}
+.BodyPhongBan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 15px;
+}
+.BodyBangLuong {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 li{
   list-style: none;
+}
+.ContentPBangLuong{
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+.ContentTopBangLuong{
+	color: #8f939b;
 }
 @media only screen and (max-width: 375px) {
   .contentBody{
@@ -137,4 +206,56 @@ li{
   background-color: wheat;
   text-align: center;
   }
+  .contentInfo{
+	display: grid;
+    grid-template-columns: 1fr;
+  }
+  .FooterChild1 {
+    padding-left: 1px;
+    padding-right: 1px;
+    font-size: 15px;
+}
+.FooterChild2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding-top: 100px;
+}
+.ContentSocial {
+    font-size: 30px;
+}
+.HeadingTitle {
+    color: white;
+    padding-bottom: 20px;
+    background-color: #1766f9;
+    padding-top: 23px;
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 5% 26% 30% 28% 11%;
+    text-decoration: none;
+}
+.AvatarProfileChild {
+    height: 95px;
+    margin: 20px;
+}
+.ContenProfile {
+    margin-top: 0px;
+    font-size: 10px;
+}
+.ProfileEmpoyee {
+    display: grid;
+    grid-template-columns: 33% 67%;
+}
+.TopInfomationEmpoyer {
+    display: grid;
+    grid-template-columns: 12% 88%;
+}
+.BodyPhongBan {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 15px;
+}
+.BodyBangLuong {
+    display: grid;
+    grid-template-columns: 1fr;
+}
 }

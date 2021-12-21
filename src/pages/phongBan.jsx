@@ -11,8 +11,8 @@ function PhongBan() {
 function BodyUI({dataAPI}) {
 	return <div className="BodyPhongBan">
 		{dataAPI.map((e) =>
-			<div key={e.id}><h1>{e.name}</h1>
-				<div> Số lượng nhân viên :{e.numberOfStaff}</div>
+			<div className="ContentBangLuong" key={e.id}><h1>{e.name}</h1>
+				<div className="ContentPBangLuong"> Số lượng nhân viên :{e.numberOfStaff}</div>
 			</div>
 		)}
 	</div>
