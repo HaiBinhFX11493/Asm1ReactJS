@@ -27,10 +27,10 @@ function AppData() {
 	return (<React.Fragment>
 {/* dung router */}
 		<div className='HeadingTitle'>
-			<li className='TitleLi'><i className="fa fa-home" aria-hidden="true"></i></li>
-			<li><Link style={{textDecoration: 'none',color: 'white'}} to="/home"><i className="fa fa-users" aria-hidden="true"> Nhân Viên</i></Link> </li>
-			<li><Link style={{textDecoration: 'none',color: 'white'}} to="/PhongBan"><i className="fa fa-address-card-o" aria-hidden="true"></i> Phòng Ban</Link></li>
-			<li><Link style={{textDecoration: 'none',color: 'white'}} to="/BangLuong"><i className="fa fa-money" aria-hidden="true"></i> Bảng Lương</Link></li>
+			<div className='TitleLi'><i className="fa fa-home" aria-hidden="true"></i></div>
+			<div><Link style={{textDecoration: 'none',color: 'white'}} to="/home"><i className="fa fa-users" aria-hidden="true"> Nhân Viên</i></Link> </div>
+			<div><Link style={{textDecoration: 'none',color: 'white'}} to="/PhongBan"><i className="fa fa-address-card-o" aria-hidden="true"></i> Phòng Ban</Link></div>
+			<div><Link style={{textDecoration: 'none',color: 'white'}} to="/BangLuong"><i className="fa fa-money" aria-hidden="true"></i> Bảng Lương</Link></div>
 		</div>
 		<Switch>
 			<Route exact path="/home" component={() => <NhanVien  staffs={staffs} />} />

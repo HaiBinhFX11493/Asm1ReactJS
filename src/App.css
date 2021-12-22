@@ -1,4 +1,7 @@
 
+body{
+	max-width: 100%;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -131,7 +134,11 @@ text-decoration: none;
 	display: grid;
 	grid-template-columns: 3% 97%;
 }
+
 @media only screen and (max-width: 1024px)  {
+	body{
+		max-width: 100%;
+	}
   .contentBody{
     display: grid;
   grid-template-columns: 1fr 1fr ;
@@ -195,6 +202,9 @@ li{
 	color: #8f939b;
 }
 @media only screen and (max-width: 375px) {
+	body{
+		max-width: 100%;
+	}
   .contentBody{
     display: grid;
   grid-template-columns: 1fr ;
