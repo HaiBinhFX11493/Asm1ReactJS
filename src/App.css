@@ -164,7 +164,8 @@ text-decoration: none;
     display: grid;
     grid-template-columns: 5% 95%;
 }
-.HeadingTitle {
+/* e kb bi sao nhung cho to cho nhat no van vao cai t2 nay */
+/* .HeadingTitle {
     color: white;
     padding-bottom: 20px;
     background-color: #1766f9;
@@ -173,7 +174,7 @@ text-decoration: none;
     display: grid;
     grid-template-columns: 4% 14% 14% 14% 54%;
     text-decoration: none;
-}
+} */
 .BodyPhongBan {
     display: grid;
     grid-template-columns: 1fr 1fr;
