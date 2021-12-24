@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import {Routes,Route,Link} from "react-router-dom";
 // lay gia tri
 function NhanVien(props) {
@@ -11,7 +11,12 @@ function NhanVien(props) {
 function BodyUI({dataAPI}) {
 
 	return (<div className="ContentBodyNhanVien">
+		<div className="BtnControl">
 		<h2> Nhân Viên </h2>
+		<button>+</button>
+		<input type="text" />
+		<button>Tìm</button>
+		</div>
 		<div className="contentInfo">
 			{dataAPI.map((e) => {
 				return <DataNv key={e.id} data={e} />
