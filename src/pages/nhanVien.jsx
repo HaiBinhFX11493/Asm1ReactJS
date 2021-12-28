@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import {Routes,Route,Link} from "react-router-dom";
 // lay gia tri
 function NhanVien(props) {
@@ -13,9 +13,11 @@ function BodyUI({dataAPI}) {
 	return (<div className="ContentBodyNhanVien">
 		<div className="BtnControl">
 		<h2> Nhân Viên </h2>
-		<button>+</button>
-		<input type="text" />
-		<button>Tìm</button>
+		<form>
+		<button className="btn-plusNV">+</button>
+		<input type="text" className="inputSeach"/>
+		<button className="btn-Seach">Tìm</button>
+		</form>
 		</div>
 		<div className="contentInfo">
 			{dataAPI.map((e) => {
