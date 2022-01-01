@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import {STAFFS,DEPARTMENTS,ROLE} from "./Components/StaffList/staffs";
-
-import {Switch,Route,Link} from "react-router-dom";
+import {Switch,Route,Link,withRouter} from "react-router-dom";
+import { connect } from "react-redux";
 import './App.css';
 import NhanVien from "./pages/nhanVien";
 import InfomationEmpoyer from "./pages/profileNv";
@@ -9,11 +9,21 @@ import BangLuong from "./pages/bangLuong";
 import PhongBan from "./pages/./phongBan";
 import BotTomUI from "./BotTomUI";
 
+const mapStateToProps =state =>{
+console.log("🚀 ~ file: Main.jsx ~ line 13 ~ state", state)
+	return {
+		departments: state.departments,
+		role: state.role,
+		staffs: state.staffs,
+	}
+}
+console.log("🚀 ~ file: Main.jsx ~ line 18 ~ staffs",staffs)
 
 
 // Hien thi title
 function AppData() {
 	// 
+	
 // useState
 	const [staffs,setStaffs]=useState(STAFFS)
 
@@ -45,4 +55,4 @@ function AppData() {
 	)
 };
 
-export default AppData;
+export default withRouter(connect(mapStateToProps)(AppData));
