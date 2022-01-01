@@ -16,8 +16,7 @@ function AppData() {
 	// 
 // useState
 	const [staffs,setStaffs]=useState(STAFFS)
-	const [departments,setDepartments]=useState(DEPARTMENTS)
-	const [role,setRole]=useState(ROLE)
+
 	const DetailEmployee=({match}) => {
 		const id=parseInt(match.params.id,10)
 		const staff=staffs.filter(x => x.id===id)[0];

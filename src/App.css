@@ -158,6 +158,20 @@ text-decoration: none;
 	color: white;
 	border-radius: 8px;
 }
+.Content-ThemNv{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.Border-ThemNv{
+	display: block;
+	border: solid;
+    padding-left: 350px;
+    padding-right: 230px;
+    padding-bottom: 60px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 15px;
+}
 
 @media only screen and (max-width: 1024px)  {
   .contentBody{
