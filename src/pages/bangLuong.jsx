@@ -2,8 +2,8 @@ import React from 'react';
 import {STAFFS} from "../Components/StaffList/staffs";
 import {Routes,Route,Link} from "react-router-dom";
 // lay gia tri 
-function BangLuong() {
-	return (<BodyUI dataAPI={STAFFS} />)
+function BangLuong(props) {
+	return (<BodyUI dataAPI={props.staffs} />)
 }
 // hien thi body
 function BodyUI({dataAPI}) {
