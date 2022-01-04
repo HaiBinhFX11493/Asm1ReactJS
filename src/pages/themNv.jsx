@@ -30,8 +30,8 @@ function ThemNv() {
 				<p>Sô ngày đã làm thêm</p>
 				<input type="text" />
 			</div>
+<button>Thêm</button>
 		</div>
-
 	)
 }
 export default ThemNv

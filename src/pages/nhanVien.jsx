@@ -1,7 +1,13 @@
 import React,{useEffect,useState} from 'react'
-import {Routes,Route,Link} from "react-router-dom";
-import InfomationEmpoyer from "./profileNv";
+import {Switch,Route,Link,withRouter} from "react-router-dom";
+import {connect} from "react-redux";
+
 import ThemNv from "./themNv";
+const mapStateToProps=state => {
+	return {
+		staffs: state.staffs,
+	}
+}
 // lay gia tri
 function NhanVien(props) {
 	return (
@@ -12,7 +18,6 @@ function NhanVien(props) {
 
 // Render gia tri bang map
 function BodyUI({dataAPI}) {
-
 
 	const [show,setShow]=useState(false)
 	const [tenNv,setTenNv]=useState('')
@@ -69,4 +74,4 @@ function DataNv({data}) {
 
 
 
-export default NhanVien
+export default withRouter(connect(mapStateToProps)(NhanVien));

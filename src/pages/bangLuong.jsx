@@ -1,7 +1,15 @@
 import React from 'react';
 import {STAFFS} from "../Components/StaffList/staffs";
-import {Routes,Route,Link} from "react-router-dom";
+import {connect} from "react-redux";
+import {Switch,Route,Link,withRouter} from "react-router-dom";
 // lay gia tri 
+
+const mapStateToProps=state => {
+	return {
+		staffs: state.staffs,
+	}
+}
+
 function BangLuong(props) {
 	return (<BodyUI dataAPI={props.staffs} />)
 }
@@ -40,4 +48,6 @@ function TinhLuong({dataAPI}) {
 
 
 
-export default BangLuong
+//export default BangLuong
+export default withRouter(connect(mapStateToProps)(BangLuong));
+

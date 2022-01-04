@@ -20,15 +20,11 @@ const mapStateToProps=state => {
 // Hien thi title
 function AppData(props) {
 	const STAFFS=props.staffs
-	const DEPARTMENTS=props.departments
-	const ROLE=props.role
 	// useState
 	const [staffs,setStaffs]=useState(STAFFS)
 
-	const [departments,setDepartments]=useState(DEPARTMENTS)
 	
-	const [role,setRole] = useState(ROLE)
-
+//Ham tim id va vao component thong tin chi tiet nhan vien
 	const DetailEmployee=({match}) => {
 		const id=parseInt(match.params.id,10)
 		const staff=staffs.filter(x => x.id===id)[0];
@@ -46,8 +42,8 @@ function AppData(props) {
 		<Switch>
 			<Route exact path="/home" component={() => <NhanVien staffs={staffs} />} />
 			<Route exact path="/home/:id" component={DetailEmployee} />
-			<Route exact path="/PhongBan" component={() => < PhongBan departments ={departments}  />} />
-			<Route path="/BangLuong" component={() => <BangLuong  staffs={staffs} /> } />
+			<Route exact path="/PhongBan" component={() => < PhongBan  />} />
+			<Route path="/BangLuong" component={() => <BangLuong   /> } />
 		</Switch>
 		<BotTomUI />
 

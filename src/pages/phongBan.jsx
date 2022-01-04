@@ -1,6 +1,13 @@
 import React from 'react';
+import {connect} from "react-redux";
+import {Switch,Route,Link,withRouter} from "react-router-dom";
 
 
+const mapStateToProps=state => {
+	return {
+		departments: state.departments
+	}
+}
 
 // lay gia tri
 
@@ -21,4 +28,5 @@ function BodyUI({dataAPI}) {
 }
 
 
-export default PhongBan
+//export default PhongBan
+export default withRouter(connect(mapStateToProps)(PhongBan));
