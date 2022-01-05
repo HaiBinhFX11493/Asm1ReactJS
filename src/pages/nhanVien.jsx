@@ -8,6 +8,7 @@ const mapStateToProps=state => {
 		staffs: state.staffs,
 	}
 }
+
 // lay gia tri
 function NhanVien(props) {
 	return (
@@ -18,6 +19,7 @@ function NhanVien(props) {
 
 // Render gia tri bang map
 function BodyUI({dataAPI}) {
+	
 
 	const [show,setShow]=useState(false)
 	const [tenNv,setTenNv]=useState('')
