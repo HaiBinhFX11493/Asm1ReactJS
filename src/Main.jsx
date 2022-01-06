@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {Switch,Route,Link,withRouter} from "react-router-dom";
+import {Switch,Route,Link,withRouter,Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 import './App.css';
 import NhanVien from "./pages/nhanVien";
@@ -40,6 +40,8 @@ function AppData(props) {
 			<li><Link style={{textDecoration: 'none',color: 'white'}} to="/BangLuong"><i className="fa fa-money" aria-hidden="true"></i> Bảng Lương</Link></li>
 		</div>
 		<Switch>
+			<Redirect exact path="/" to ="/home"> </Redirect>
+			
 			<Route exact path="/home" component={() => <NhanVien staffs={staffs} />} />
 			<Route exact path="/home/:id" component={DetailEmployee} />
 			<Route exact path="/PhongBan" component={() => < PhongBan  />} />
