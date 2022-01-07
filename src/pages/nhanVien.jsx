@@ -47,10 +47,14 @@ function BodyUI({dataAPI}) {
 				{
 					findNv.length == 0 ? 
 					dataAPI.map((e) =>{
-						return (<DataNv key={e.id} data={e} />)
+						return (<DataNv key={e.id} data={e} 
+						addNhanVien ={e.addNhanVien}
+						staffId = {e.id}/>)
 					}):
 					findNv.map((e) =>{
-						return  (<DataNv key={e.id} data={e} />)
+						return  (<DataNv key={e.id} data={e} 
+							addNhanVien ={e.addNhanVien}
+							staffId = {e.id}/>)
 					})
 				}
 			</div>
@@ -58,7 +62,7 @@ function BodyUI({dataAPI}) {
 	)
 }
 // in ra body
-function DataNv({data}) {
+function DataNv({data} ) {
 	return (<div >
 		<div className="ContentBorder">
 			<div className="contentInfo2">

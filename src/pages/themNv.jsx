@@ -2,18 +2,7 @@ import React,{Component} from "react";
 import {Button,FormGroup,Input,Label,Form} from "reactstrap";
 import {Control,LocalForm,Errors} from "react-redux-form";
 
-const newStaff={
-	id: '',
-	name: '',
-	doB: '',
-	salaryScale: '',
-	startDate: '',
-	department: '',
-	annualLeave: '',
-	overTime: '',
-	salary: '',
-	image: '/assets/images/alberto.png',
-}
+
 
 class ThemNv extends Component {
 
@@ -54,6 +43,7 @@ class ThemNv extends Component {
 	}
 	
 	render() {
+		console.log("current State is:" + JSON.stringify(this.state))
 		
 		return (
 			<Form  onSubmit ={this.handleSubmit}>

@@ -5,7 +5,7 @@ import {Control,LocalForm,Errors} from "react-redux-form";
 
 
 function ThemNv() {
-	const initStaff={
+	const newStaff={
 		id: '',
 		name: '',
 		doB: '',
@@ -19,14 +19,10 @@ function ThemNv() {
 	}
 
 	
-	const [newStaff,setNewStaff]=useState(initStaff)
-	console.log("==============",newStaff)
+	const [newStaffs,setNewStaffs]=useState(newStaff)
+	console.log("==============",newStaffs)
 
-	//handleSubmit()=() => {
-	//console.log("current State is: "+JSON.stringify(newStaff))
-	//	alert("current State is: "+JSON.stringify(newStaff))
-	//}
-	//setNewStaff(newStaff.name = value)
+
 	return (
 		<Form >
 			<div className="Border-ThemNv">
@@ -39,27 +35,33 @@ function ThemNv() {
 				</FormGroup>
 				<FormGroup className="Content-ThemNv">
 					<Label for="doB">Ngày sinh</Label>
-					<Input name='doB' id="name" type="date" />
+					<Input name='doB' id="name" type="date"  
+					onChange={(e) => setNewStaff({...newStaff,doB: e.target.value})}/>
 				</FormGroup>
 				<FormGroup className="Content-ThemNv">
 					<Label for="startDate">Ngày vào công ty</Label>
-					<Input name="startDate" id="startDate" type="date" />
+					<Input name="startDate" id="startDate" type="date"
+					 onChange={(e) => setNewStaff({...newStaff,startDate: e.target.value})}/>
 				</FormGroup>
 				<FormGroup className="Content-ThemNv">
 					<Label for="department">Phòng ban</Label>
-					<Input name="department" id="department" type="text" />
+					<Input name="department" id="department" type="text" 
+					onChange={(e) => setNewStaff({...newStaff,department: e.target.value})} />
 				</FormGroup>
 				<FormGroup className="Content-ThemNv">
-					<Label for="salary">Hệ số lương</Label>
-					<Input name="salary" id="salary" type="number" />
+					<Label for="salaryScale">Hệ số lương</Label>
+					<Input name="salaryScale" id="salaryScale" type="number" 
+					onChange={(e) => setNewStaff({...newStaff,salaryScale: e.target.value})}/>
 				</FormGroup>
 				<FormGroup className="Content-ThemNv">
 					<Label for="annualLeave">Số ngày nghỉ còn lại</Label>
-					<Input name="annualLeave" id="annualLeave" type="text" />
+					<Input name="annualLeave" id="annualLeave" type="text" 
+					onChange={(e) => setNewStaff({...newStaff,annualLeave: e.target.value})}/>
 				</FormGroup>
 				<FormGroup className="Content-ThemNv">
 					<Label for="overTime">Sô ngày đã làm thêm</Label>
-					<Input name="overTime" id="overTime" type="text" />
+					<Input name="overTime" id="overTime" type="text" 
+					onChange={(e) => setNewStaff({...newStaff,overTime: e.target.value})}/>
 				</FormGroup>
 				<button type="submit" color="primary">Thêm</button>
 			</div>

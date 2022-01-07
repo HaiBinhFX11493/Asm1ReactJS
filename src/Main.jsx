@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {Switch,Route,Link,withRouter,Redirect} from "react-router-dom";
 import {connect} from "react-redux";
+import { addNhanVien } from "./redux/ActionCreators.js";
 import './App.css';
 import NhanVien from "./pages/nhanVien";
 import InfomationEmpoyer from "./pages/profileNv";
@@ -15,6 +16,9 @@ const mapStateToProps=state => {
 		staffs: state.staffs,
 	}
 }
+const mapDispatchToProps = (dispatch) =>({
+	addNhanVien: (newStaff,staffId) => dispatch(addNhanVien(newStaff,staffId))
+})
 
 
 // Hien thi title
@@ -28,7 +32,10 @@ function AppData(props) {
 	const DetailEmployee=({match}) => {
 		const id=parseInt(match.params.id,10)
 		const staff=staffs.filter(x => x.id===id)[0];
-		return <InfomationEmpoyer staff={staff} />
+		
+		return (<InfomationEmpoyer staff={staff} 
+		addNhanVien ={this.props.addNhanVien}
+		/>)
 	}
 
 	return (<React.Fragment>
@@ -55,4 +62,4 @@ function AppData(props) {
 	)
 };
 
-export default withRouter(connect(mapStateToProps)(AppData));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(AppData));

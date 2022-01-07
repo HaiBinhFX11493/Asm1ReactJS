@@ -14,11 +14,14 @@ function App() {
 	
 	
 	return (
+		<div>
+		
 		<Provider store={store} >
 		<Router >
 			<AppData />
 		</Router>
 		</Provider>
+		</div>
 		
 	);
 }
