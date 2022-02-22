@@ -35,8 +35,8 @@ function ThemNv() {
 	return (
 
 
-		<ModalBody class="modal fade" tabindex="-1" role="dialog">
-			<LocalForm class="modal-dialog" onSubmit={(values) => handleSubmit(values)}>
+		<ModalBody >
+			<LocalForm  onSubmit={(values) => handleSubmit(values)}>
 				<Row  className="form-group">
 					<Label htmlFor="name" md={5}>
 						Name
