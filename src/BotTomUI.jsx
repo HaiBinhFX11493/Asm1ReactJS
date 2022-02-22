@@ -4,24 +4,43 @@ import 'font-awesome/css/font-awesome.min.css';
 // Lam Footer
 
 function BotTomUI() {
-    return <div className="Footer">
-        <div className="FooterChild1">
-			<h3>Our Addres</h3>
-            <p>121,Clear Water Bay Road Clear Water Bay,Kowloon HONGKONG </p>
-            <i className="fa fa-phone" aria-hidden="true">: +852 1234 5678</i>
-            <i className="fa fa-fax" aria-hidden="true"> +852 8765 4321</i>
-            <i className="fa fa-envelope" aria-hidden="true">confusion@food.net</i>
-        </div>
-        <div className="FooterChild2">
-            <div className="ContentSocial"><a href="google.com"><i className="fa fa-google" aria-hidden="true"></i></a></div>
-            <div className="ContentSocial"> <a href="facebook.com"><i className="fa fa-facebook-official" aria-hidden="true"></i></a></div>
-            <div className="ContentSocial"> <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
-			<div className="ContentSocial"> <a href="https://www.skype.com"><i className="fa fa-skype" aria-hidden="true"></i></a></div>
-            <div className="ContentSocial"> <a href="https://www.youtube.com"><i className="fa fa-youtube-square" aria-hidden="true"></i></a></div>
-            <div className="ContentSocial"> <a href="https://mail.google.com/mail/u/0/?pli=1"><i className="fa fa-envelope-o" aria-hidden="true"></i></a></div>
-        </div>
-
-    </div>
+    return (
+		<div className="p-2 mb-2 bg-info text-black">
+		<div  className="footer">
+			<div className="container">
+				<div className="row justify-content-center">             
+					<div className="col-7 col-sm-5">
+						<h5>Our Address</h5>
+						<address>
+						  121, Clear Water Bay Road<br />
+						  Clear Water Bay, Kowloon<br />
+						  HONG KONG<br />
+						  <i className="fa fa-phone fa-lg"></i>: +852 1234 5678<br />
+						  <i className="fa fa-fax fa-lg"></i>: +852 8765 4321<br />
+						  <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:confusion@food.net">
+							 confusion@food.net</a>
+						</address>
+					</div>
+					<div className="col-12 col-sm-4 align-self-center">
+						<div className="text-center">
+							<a className="btn btn-social-icon btn-google" href="http://google.com/+"><i className="fa fa-google-plus"></i></a>
+							<a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i className="fa fa-facebook"></i></a>
+							<a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
+							<a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
+							<a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube"></i></a>
+							<a className="btn btn-social-icon" href="mailto:"><i className="fa fa-envelope-o"></i></a>
+						</div>
+					</div>
+				</div>
+				<div className="row justify-content-center">             
+					<div className="col-auto">
+						<p>© Copyright 2018 Ristorante Con Fusion</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		)
 
 }
 export default BotTomUI

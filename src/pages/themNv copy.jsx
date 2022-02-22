@@ -15,57 +15,63 @@ function ThemNv() {
 		annualLeave: '',
 		overTime: '',
 		salary: '',
-		image: '/assets/images/alberto.png',
+		image: '../Components/images/alberto.png',
 	}
 
 	
 	const [newStaffs,setNewStaffs]=useState(newStaff)
-	console.log("==============",newStaffs)
+	
 
 
+	const handleSubmit = (event) =>{
+		console.log(JSON.stringify(newStaffs))
+		alert(JSON.stringify(newStaffs))
+		event.preventDefault();
+	}
+	
 	return (
-		<Form >
+		<div >
 			<div className="Border-ThemNv">
 				<h2>Thêm Nhân Viên</h2>
-				<FormGroup className="Content-ThemNv">
-					<Label for="name">Tên</Label>
-					<Input name='name' id="name" type="text"
-						onChange={(e) => setNewStaff({...newStaff,name: e.target.value})}
+				<div className="Content-ThemNv">
+					<div for="name">Tên</div>
+					<input name='name' id="name" type="text"
+						onChange={(e) => setNewStaffs({...newStaff,name: e.target.value})}
 					/>
-				</FormGroup>
-				<FormGroup className="Content-ThemNv">
-					<Label for="doB">Ngày sinh</Label>
-					<Input name='doB' id="name" type="date"  
-					onChange={(e) => setNewStaff({...newStaff,doB: e.target.value})}/>
-				</FormGroup>
-				<FormGroup className="Content-ThemNv">
-					<Label for="startDate">Ngày vào công ty</Label>
-					<Input name="startDate" id="startDate" type="date"
-					 onChange={(e) => setNewStaff({...newStaff,startDate: e.target.value})}/>
-				</FormGroup>
-				<FormGroup className="Content-ThemNv">
-					<Label for="department">Phòng ban</Label>
-					<Input name="department" id="department" type="text" 
-					onChange={(e) => setNewStaff({...newStaff,department: e.target.value})} />
-				</FormGroup>
-				<FormGroup className="Content-ThemNv">
-					<Label for="salaryScale">Hệ số lương</Label>
-					<Input name="salaryScale" id="salaryScale" type="number" 
-					onChange={(e) => setNewStaff({...newStaff,salaryScale: e.target.value})}/>
-				</FormGroup>
-				<FormGroup className="Content-ThemNv">
-					<Label for="annualLeave">Số ngày nghỉ còn lại</Label>
-					<Input name="annualLeave" id="annualLeave" type="text" 
-					onChange={(e) => setNewStaff({...newStaff,annualLeave: e.target.value})}/>
-				</FormGroup>
-				<FormGroup className="Content-ThemNv">
-					<Label for="overTime">Sô ngày đã làm thêm</Label>
-					<Input name="overTime" id="overTime" type="text" 
-					onChange={(e) => setNewStaff({...newStaff,overTime: e.target.value})}/>
-				</FormGroup>
-				<button type="submit" color="primary">Thêm</button>
+				</div>
+				<div className="Content-ThemNv">
+					<div for="doB">Ngày sinh</div>
+					<input name='doB' id="name" type="date"  
+					onChange={(e) => setNewStaffs({...newStaff,doB: e.target.value})}/>
+				</div>
+				<div className="Content-ThemNv">
+					<div for="startDate">Ngày vào công ty</div>
+					<input name="startDate" id="startDate" type="date"
+					 onChange={(e) => setNewStaffs({...newStaff,startDate: e.target.value})}/>
+				</div>
+				<div className="Content-ThemNv">
+					<div for="department">Phòng ban</div>
+					<input name="department" id="department" type="text" 
+					onChange={(e) => setNewStaffs({...newStaff,department: e.target.value})} />
+				</div>
+				<div className="Content-ThemNv">
+					<div for="salaryScale">Hệ số lương</div>
+					<input name="salaryScale" id="salaryScale" type="number" 
+					onChange={(e) => setNewStaffs({...newStaff,salaryScale: e.target.value})}/>
+				</div>
+				<div className="Content-ThemNv">
+					<div for="annualLeave">Số ngày nghỉ còn lại</div>
+					<input name="annualLeave" id="annualLeave" type="text" 
+					onChange={(e) => setNewStaffs({...newStaff,annualLeave: e.target.value})}/>
+				</div>
+				<div className="Content-ThemNv">
+					<div for="overTime">Sô ngày đã làm thêm</div>
+					<input name="overTime" id="overTime" type="text" 
+					onChange={(e) => setNewStaffs({...newStaff,overTime: e.target.value})}/>
+				</div>
+				<button onClick={handleSubmit} color="primary">Thêm</button>
 			</div>
-		</Form>
+		</div>
 	)
 }
 
