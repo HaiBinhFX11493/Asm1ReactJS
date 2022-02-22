@@ -9,7 +9,35 @@ const minLength=(len) => (val) => val&&(val.length>=len);
 
 function ThemNv() {
 
+	//const [isModalOpen, setIsModalOpen] = useState(false);
+	//constructor(props) {
+	//	super(props);
 
+	//	this.state={
+	//		data: {
+	//			id: '',
+	//			name: '',
+	//			doB: '',
+	//			salaryScale: '',
+	//			startDate: '',
+	//			department: 'Sale',
+	//			annualLeave: '',
+	//			overTime: '',
+	//			salary: '',
+	//			image: avartar,
+	//			//touched: {
+	//			//	name: false,
+	//			//	doB: false,
+	//			//	startDate: false,
+	//			//}
+	//		}
+
+	//	}
+	//	//Khai Báo funtion
+	//	this.handleSubmit=this.handleSubmit.bind(this);
+	//	this.handleInputChange=this.handleInputChange.bind(this);
+	//	this.handleBlur=this.handleBlur.bind(this)
+	//}
 	const handleInputChange=(event) => {
 		const target=event.target;
 		const value=target.type==='checkbox'? target.checked:target.value;
@@ -26,18 +54,22 @@ function ThemNv() {
 
 
 	const handleSubmit=(values) => {
-
+		alert(JSON.stringify(values))
 		var dataAfter=JSON.parse(localStorage.getItem('data'))!=null? JSON.parse(localStorage.getItem('data')):[];
 		localStorage.setItem('data',JSON.stringify([...dataAfter,this.state.data]));
 		this.props.setIsUpdateStaff()
 	}
 
+
+
+
+
 	return (
+	
 
-
-		<ModalBody >
-			<LocalForm  onSubmit={(values) => handleSubmit(values)}>
-				<Row  className="form-group">
+		<ModalBody>
+			<LocalForm onSubmit={(values) => handleSubmit(values)}>
+				<Row className="form-group">
 					<Label htmlFor="name" md={5}>
 						Name
 					</Label>
@@ -242,12 +274,8 @@ function ThemNv() {
 					</Col>
 				</Row>
 			</LocalForm>
-				
-		
-
 		</ModalBody>
-
-
+		//</Modal>
 
 	)
 }
@@ -256,7 +284,3 @@ function ThemNv() {
 
 
 export default ThemNv
-
-
-
-

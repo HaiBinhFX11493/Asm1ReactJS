@@ -1,7 +1,7 @@
+
 import React,{useEffect,useState} from 'react'
 import {Switch,Route,Link,withRouter,Redirect} from "react-router-dom";
 import {connect} from "react-redux";
-import {addNhanVien} from "./redux/ActionCreators.js";
 import './App.css';
 import NhanVien from "./pages/nhanVien";
 import InfomationEmpoyer from "./pages/profileNv";
@@ -21,9 +21,7 @@ const mapStateToProps=state => {
 		staffs: state.staffs,
 	}
 }
-const mapDispatchToProps=(dispatch) => ({
-	addNhanVien: (newStaff,staffId) => dispatch(addNhanVien(newStaff,staffId))
-})
+
 
 
 // Hien thi title
@@ -119,4 +117,4 @@ const navbarText= {
 	)
 };
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(AppData));
+export default withRouter(connect(mapStateToProps)(AppData));

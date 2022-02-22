@@ -1,28 +1,12 @@
-import { DEPARTMENTS,ROLE,STAFFS } from "../Components/StaffList/staffs.jsx";
-import * as ActionTypes from "./ActionsTypes";
+import { DEPARTMENTS } from "../Components/StaffList/staffs.jsx";
+import { ROLE } from "../Components/StaffList/staffs.jsx";
+import { STAFFS } from "../Components/StaffList/staffs.jsx";
+export const initialState = {
+	departments:DEPARTMENTS,
+	role: ROLE,
+	staffs: STAFFS
+};
 
-
-export const Departments = (state = DEPARTMENTS, action) =>{
-	switch(action.type) {
-		default:
-		return state
-	}
-}
-
-export const Role = (state = ROLE, action) =>{
-	switch(action.type) {
-		default:
-		return state
-	}
-}
-
-export const Staffs = (state = STAFFS, action) =>{
-	switch(action.type) {
-		case ActionTypes.ADD_NHANVIEN:
-			var newStaff = action.payload
-			newStaff.id = state.length;
-			return state.concat(newStaff)
-		default:
-		return state
-	}
+export const Reducer = (state = initialState,action) =>{
+	return state
 }
