@@ -14,7 +14,7 @@ import {
 	Form,FormGroup,Input,Label
 } from 'reactstrap';
 import avartar from "./Components/images/alberto.png";
-
+import logo from "./Components/images/logo.png";
 import {NavLink} from 'react-router-dom';
 import {STAFFS,DEPARTMENTS} from "./Components/StaffList/staffs";
 //const mapStateToProps=state => {
@@ -74,7 +74,7 @@ function AppData() {
 				<NavbarToggler onClick={toggleNav} />
 				{/*<div class="row">*/}
 				<NavbarBrand className="mr-auto" href="/">
-					<img src="asset/image/hinh-tron-dep_111539274.jpg" height="30" width="41" alt="Avatar" />
+					<img src={logo} height="30" width="41"  />
 				</NavbarBrand>
 				<Collapse isOpen={isNavOpen} navbar>
 					<Nav navbar>
