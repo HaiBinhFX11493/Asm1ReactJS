@@ -7,7 +7,7 @@ const now=new Date();
 // Hien thi body con cua NhanVien
 function InfomationEmpoyer({staff}) {
 
-
+console.log(staff)
 
 	return (<React.Fragment>
 		<Breadcrumb>

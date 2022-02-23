@@ -1,8 +1,7 @@
-import React,{useEffect,useState} from 'react'
-import {Switch,Route,Link,withRouter} from "react-router-dom";
+import React,{useState} from 'react'
+import {Link,withRouter} from "react-router-dom";
 import {connect} from "react-redux";
-import { Card, CardImg, CardImgOverlay,
-    CardTitle } from 'reactstrap'
+import { Card, CardImg } from 'reactstrap'
 import ThemNv from "./themNv";
 const mapStateToProps=state => {
 	return {
@@ -14,13 +13,13 @@ const mapStateToProps=state => {
 function NhanVien(props) {
 
 	return (
-		<BodyUI staffs={props.staffs} setIsUpdateStaff={props.setIsUpdateStaff} />
+		<BodyUI staffs={props.staffs} addStaff={props.addStaff} />
 	)
 
 }
 
 // Render gia tri bang map
-function BodyUI({staffs, setIsUpdateStaff}) {
+function BodyUI({staffs, addStaff}) {
 
 
 	const [allEmployee,setAllEmployee]=useState(staffs)
@@ -35,7 +34,7 @@ function BodyUI({staffs, setIsUpdateStaff}) {
 	}
 
 	
-	const  name =()=> {
+	const  openModal =()=> {
 		setShow(!show)
 		
 	}
@@ -45,14 +44,14 @@ function BodyUI({staffs, setIsUpdateStaff}) {
 		<div className="container" >
 			<div className="row" >
 				<h2 className="col-lg-3 col-md-3 col-8"> Nhân Viên </h2>
-				<div className="col-lg-1 col-md-1 col-4"> <button type="button" class="btn btn-secondary"  onClick={() => name()}> + </button></div>	
+				<div className="col-lg-1 col-md-1 col-4"> <button type="button" class="btn btn-secondary"  onClick={() => openModal()}> + </button></div>	
 					<div className="col-lg-1 col-md-1"></div>
 					<input className="col-lg-4 col-md-4 col-8" value={tenNv} onChange={e => setTenNv(e.target.value)} />
 					{/*<div className="col-lg-1 col-md-1"></div>*/}
 					<div className="col-lg-2 col-md-2 col-4"><button type="button" className="btn btn-primary"  onClick={handleFindNv}>Tìm</button></div>
 			
 			</div>
-			{show&&<ThemNv  staffs={staffs} lengthAll ={allEmployee.length} setIsUpdateStaff ={setIsUpdateStaff} />}
+			{show&&<ThemNv  staffs={staffs}  addStaff={addStaff}/>}
 
 			<div className="row"  >
 				{

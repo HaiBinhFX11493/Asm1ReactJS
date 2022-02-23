@@ -13,34 +13,44 @@ import {
 	Button,Modal,ModalHeader,ModalBody,
 	Form,FormGroup,Input,Label
 } from 'reactstrap';
+import avartar from "./Components/images/alberto.png";
+
 import {NavLink} from 'react-router-dom';
-const mapStateToProps=state => {
-	return {
-		departments: state.departments,
-		role: state.role,
-		staffs: state.staffs,
-	}
-}
+import {STAFFS,DEPARTMENTS} from "./Components/StaffList/staffs";
+//const mapStateToProps=state => {
+//	return {
+//		departments: state.departments,
+//		role: state.role,
+//		staffs: state.staffs,
+//	}
+//}
 
 
 
 // Hien thi title
-function AppData(props) {
-	const STAFFS=props.staffs
-	// useState
-	const [staffs,setStaffs]=useState(STAFFS)
-	const [isUpdateStaff,setIsUpdateStaff]=useState(false)
-	const [isNavOpen,setIsNavOpen]=useState(false)
+function AppData() {
 
+	const [staffs,setStaffs]=useState(STAFFS)
+	const [isNavOpen,setIsNavOpen]=useState(false)
+	const [departments,setDepartment]=(DEPARTMENTS)
 	const toggleNav=() => {
 		setIsNavOpen(!isNavOpen);
 	}
-	//const addStaff =(newStaff) =>{
-const navbarText= {
-	textDecoration: 'none',
-    fontSize: 20,
-	marginRight:30,
-}
+	const addStaff=(data) => {
+		console.log(data)
+		let newStaff=staffs.concat([{
+			...data,
+			id: staffs.length+1,
+			image: avartar,
+			//department: departments.filter(x => x.id === newStaff.departments.name)[0]
+		}]);
+		setStaffs(newStaff)
+	}
+	const navbarText={
+		textDecoration: 'none',
+		fontSize: 20,
+		marginRight: 30,
+	}
 	//}
 	//Ham tim id va vao component thong tin chi tiet nhan vien
 	const DetailEmployee=({match}) => {
@@ -52,64 +62,46 @@ const navbarText= {
 		/>)
 	}
 
-	useEffect(() => {
-		if(localStorage.getItem('data')) {
-			var data=JSON.parse(localStorage.getItem('data'));
-			var set=[...staffs,...data];
 
-			//const addStaff = (data) =>{
-			//	let newStaffs= staffs.concat([{
-			//		...data
-			//	}])
-			//let ns = staffs.concat([{
-			//	...data,
-			//	id: staffs.length + 1,
-			//	image: '/assets/images/alberto.jpg',
-			//	department: departments.filter(x => x.id === ns.department)[0]
-			//  }]);
 
-			//}
-			setStaffs(set)/*  */
-		}
 
-	},[isUpdateStaff])
 	return (<React.Fragment>
 		{/* dung router */}
-		
-			<Navbar dark expand="md" className="p-2 mb-2 bg-primary text-white">
-				{/*<div className="col-12 col-sm-6">*/}
-				<div className="container">
-					<NavbarToggler onClick={toggleNav} />
-					{/*<div class="row">*/}
-					<NavbarBrand className="mr-auto" href="/">
-						<img src="asset/image/hinh-tron-dep_111539274.jpg" height="30" width="41" alt="Avatar" />
-					</NavbarBrand>
-					<Collapse isOpen={isNavOpen} navbar>
-						<Nav navbar>
-							<NavItem>
-								<NavLink style={navbarText} className="text-white" to="/home"><i  className="fa fa-users" aria-hidden="true"> Nhân Viên</i></NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink style={navbarText} className="text-white" to="/PhongBan"><i  className="fa fa-address-card-o" aria-hidden="true"></i> Phòng Ban</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink style={navbarText } className="text-white" to="/BangLuong"><i  className="fa fa-money" aria-hidden="true"></i> Bảng Lương</NavLink>
-							</NavItem>
-						</Nav>
-					</Collapse>
-				</div>
-				{/*</div>*/}
-				{/*</div>*/}
-			</Navbar>
-			<Switch>
-				<Redirect exact path="/" to="/home"> </Redirect>
-				<Route exact path="/home" component={() => <NhanVien staffs={staffs} setIsUpdateStaff={() => setIsUpdateStaff(!isUpdateStaff)} />} />
-				<Route exact path="/home/:id" component={DetailEmployee} />
-				<Route exact path="/PhongBan" component={() => < PhongBan />} />
-				<Route path="/BangLuong" component={() => <BangLuong />} />
-			</Switch>
-			<BotTomUI />
-	
+
+		<Navbar dark expand="md" className="p-2 mb-2 bg-primary text-white">
+			{/*<div className="col-12 col-sm-6">*/}
+			<div className="container">
+				<NavbarToggler onClick={toggleNav} />
+				{/*<div class="row">*/}
+				<NavbarBrand className="mr-auto" href="/">
+					<img src="asset/image/hinh-tron-dep_111539274.jpg" height="30" width="41" alt="Avatar" />
+				</NavbarBrand>
+				<Collapse isOpen={isNavOpen} navbar>
+					<Nav navbar>
+						<NavItem>
+							<NavLink style={navbarText} className="text-white" to="/home"><i className="fa fa-users" aria-hidden="true"> Nhân Viên</i></NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink style={navbarText} className="text-white" to="/PhongBan"><i className="fa fa-address-card-o" aria-hidden="true"></i> Phòng Ban</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink style={navbarText} className="text-white" to="/BangLuong"><i className="fa fa-money" aria-hidden="true"></i> Bảng Lương</NavLink>
+						</NavItem>
+					</Nav>
+				</Collapse>
+			</div>
+			{/*</div>*/}
+			{/*</div>*/}
+		</Navbar>
+		<Switch>
+			<Redirect exact path="/" to="/home"> </Redirect>
+			<Route exact path="/home" component={() => <NhanVien staffs={staffs} addStaff={addStaff} />} />
+			<Route exact path="/home/:id" component={DetailEmployee} />
+			<Route exact path="/PhongBan" component={() => < PhongBan />} />
+			<Route path="/BangLuong" component={() => <BangLuong />} />
+		</Switch>
+		<BotTomUI />
+
 
 	</React.Fragment>
 
@@ -117,4 +109,4 @@ const navbarText= {
 	)
 };
 
-export default withRouter(connect(mapStateToProps)(AppData));
+export default withRouter(connect()(AppData));
