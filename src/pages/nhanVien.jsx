@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import {Routes,Route,Link} from "react-router-dom";
+import React from 'react'
+import { Link } from "react-router-dom";
 // lay gia tri
 function NhanVien(props) {
 	return (
@@ -8,7 +8,7 @@ function NhanVien(props) {
 }
 
 // Render gia tri bang map
-function BodyUI({dataAPI}) {
+function BodyUI({ dataAPI }) {
 
 	return (<div className="ContentBodyNhanVien">
 		<h2> Nhân Viên </h2>
@@ -20,7 +20,7 @@ function BodyUI({dataAPI}) {
 	)
 };
 // in ra body
-function DataNv({data}) {
+function DataNv({ data }) {
 	return (<div >
 
 		<div className="ContentBorder" data={data}>
