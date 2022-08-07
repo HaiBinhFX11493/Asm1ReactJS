@@ -1,36 +1,50 @@
 import React from 'react';
-import {STAFFS} from "../Components/StaffList/staffs";
-import {Routes,Route,Link} from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, withRouter } from "react-router-dom";
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+
 // lay gia tri 
-function BangLuong() {
-	return (<BodyUI dataAPI={STAFFS} />)
+
+
+const styleBorder = {
+	border: '5px solid ',
+	margin: 10,
+}
+const mapStateToProps = state => {
+	return {
+		staffs: state.staffs,
+	}
+}
+
+function BangLuong(props) {
+	return (<BodyUI dataAPI={props.staffs} />)
 }
 // hien thi body
-function BodyUI({dataAPI}) {
-	return (<div>
-		<div className="TopInfomationEmpoyer">
-		<div ><Link to="/home">Home</Link></div>
-		<div className="ContentTopBangLuong">/ Bảng Lương</div>
-		</div>
-		<div className="BodyBangLuong" >
-			{dataAPI.map((element,id) => 
-			
-			<div className="ContentBangLuong" key={id}>
-				<h2 >{element.name}</h2>
-				<p className="ContentPBangLuong" >Mã nhân viên: {element.id}</p>
-				<p className="ContentPBangLuong" >Hệ số lương: {element.salaryScale}</p>
-				<p className="ContentPBangLuong" >Số giờ làm thêm: {element.overTime}</p>
-				<div className="ContentTinhLuong">Lương: <TinhLuong dataAPI={element} /> </div>
-			</div>)}
+function BodyUI({ dataAPI }) {
+	return (<div >
+		<Breadcrumb>
+			<BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
+			<BreadcrumbItem active>Bảng Lương</BreadcrumbItem>
+		</Breadcrumb>
+		<div className="row"  >
+			{dataAPI.map((element, id) =>
+
+				<div style={styleBorder} className="col-12 col-lg-3 col-md-5" key={id}>
+					<h2 >{element.name}</h2>
+					<p  >Mã nhân viên: {element.id}</p>
+					<p  >Hệ số lương: {element.salaryScale}</p>
+					<p  >Số giờ làm thêm: {element.overTime}</p>
+					<div class="p-3 mb-2 bg-light text-dark"> Lương: <TinhLuong dataAPI={element} /> </div>
+				</div>)}
 		</div>
 	</div>)
 }
 // tinh luong
-function TinhLuong({dataAPI}) {
-	const basicSalary=3000000;
-	const overTimeSalary=200000;
-	const salary=(dataAPI.salaryScale*basicSalary)+(dataAPI.overTime*overTimeSalary);
-	const result=Math.round(salary,2);
+function TinhLuong({ dataAPI }) {
+	const basicSalary = 3000000;
+	const overTimeSalary = 200000;
+	const salary = (dataAPI.salaryScale * basicSalary) + (dataAPI.overTime * overTimeSalary);
+	const result = Math.round(salary, 2);
 
 	return result
 }
@@ -40,4 +54,6 @@ function TinhLuong({dataAPI}) {
 
 
 
-export default BangLuong
+//export default BangLuong
+export default withRouter(connect(mapStateToProps)(BangLuong));
+
