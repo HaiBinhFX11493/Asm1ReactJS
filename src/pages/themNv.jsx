@@ -1,28 +1,28 @@
-import React,{useState} from "react";
-import {Button,FormGroup,Label,Form,FormFeedback,Col,Row,Modal,ModalHeader,ModalBody} from "reactstrap";
-import {Control,LocalForm,Errors} from 'react-redux-form'
-import avartar from "../Components/images/alberto.png";
+import React, { useState } from "react";
+import { Button, Label, Col, Row, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Control, LocalForm, Errors } from 'react-redux-form'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-const required=(val) => val&&val.length;
-const maxLength=(len) => (val) => !(val)||(val.length<=len);
-const minLength=(len) => (val) => val&&(val.length>=len);
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => !(val) || (val.length <= len);
+const minLength = (len) => (val) => val && (val.length >= len);
 
-function ThemNv({addStaff}) {
+function ThemNv({ addStaff }) {
 
 
-	const handleSubmit=(values) => {
+	const handleSubmit = (values) => {
 		alert(JSON.stringify(values))
 		addStaff(values)
 	}
-	const [navOpen,setNavOpen] = useState({
+	const [navOpen, setNavOpen] = useState({
 		isNavOpen: false,
 	})
-	const [modalOpen,setModalOpen] = useState({
+	const [modalOpen, setModalOpen] = useState({
 		isModalOpen: false
 	})
-	
-const toggleModal =() => {
-	setModalOpen({
+
+	const toggleModal = () => {
+		setModalOpen({
 			isModalOpen: !modalOpen
 		});
 	}
@@ -31,7 +31,7 @@ const toggleModal =() => {
 	return (
 		<Modal isOpen={navOpen} toggle={toggleModal}>
 			<ModalHeader toggle={toggleModal}>Thêm Nhân Viên</ModalHeader>
-		<ModalBody>
+			<ModalBody>
 				<LocalForm onSubmit={(values) => handleSubmit(values)}>
 					<Row className="form-group">
 						<Label htmlFor="name" md={5}>
@@ -176,7 +176,7 @@ const toggleModal =() => {
 
 					<Row className="form-group">
 						<Label htmlFor="annualLeave" md={5}>
-						Số ngày nghỉ còn lại
+							Số ngày nghỉ còn lại
 						</Label>
 						<Col md={7}>
 							<Control.text

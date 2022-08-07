@@ -1,7 +1,7 @@
 
-import React,{useEffect,useState} from 'react'
-import {Switch,Route,Link,withRouter,Redirect} from "react-router-dom";
-import {connect} from "react-redux";
+import React, { useState } from 'react'
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import './App.css';
 import NhanVien from "./pages/nhanVien";
 import InfomationEmpoyer from "./pages/profileNv";
@@ -9,53 +9,45 @@ import BangLuong from "./pages/bangLuong";
 import PhongBan from "./pages/./phongBan";
 import BotTomUI from "./BotTomUI";
 import {
-	Navbar,NavbarBrand,Nav,NavbarToggler,Collapse,NavItem,Jumbotron,
-	Button,Modal,ModalHeader,ModalBody,
-	Form,FormGroup,Input,Label
+	Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem,
 } from 'reactstrap';
 import avartar from "./Components/images/alberto.png";
 import logo from "./Components/images/logo.png";
-import {NavLink} from 'react-router-dom';
-import {STAFFS,DEPARTMENTS} from "./Components/StaffList/staffs";
-//const mapStateToProps=state => {
-//	return {
-//		departments: state.departments,
-//		role: state.role,
-//		staffs: state.staffs,
-//	}
-//}
+import { NavLink } from 'react-router-dom';
+import { STAFFS, } from "./Components/StaffList/staffs";
+
 
 
 
 // Hien thi title
 function AppData() {
 
-	const [staffs,setStaffs]=useState(STAFFS)
-	const [isNavOpen,setIsNavOpen]=useState(false)
-	const [departments,setDepartment]=(DEPARTMENTS)
-	const toggleNav=() => {
+	const [staffs, setStaffs] = useState(STAFFS)
+	const [isNavOpen, setIsNavOpen] = useState(false)
+
+	const toggleNav = () => {
 		setIsNavOpen(!isNavOpen);
 	}
-	const addStaff=(data) => {
+	const addStaff = (data) => {
 		console.log(data)
-		let newStaff=staffs.concat([{
+		let newStaff = staffs.concat([{
 			...data,
-			id: staffs.length+1,
+			id: staffs.length + 1,
 			image: avartar,
 			//department: departments.filter(x => x.id === newStaff.departments.name)[0]
 		}]);
 		setStaffs(newStaff)
 	}
-	const navbarText={
+	const navbarText = {
 		textDecoration: 'none',
 		fontSize: 20,
 		marginRight: 30,
 	}
 	//}
 	//Ham tim id va vao component thong tin chi tiet nhan vien
-	const DetailEmployee=({match}) => {
-		const id=parseInt(match.params.id,10)
-		const staff=staffs.filter(x => x.id===id)[0];
+	const DetailEmployee = ({ match }) => {
+		const id = parseInt(match.params.id, 10)
+		const staff = staffs.filter(x => x.id === id)[0];
 
 		return (<InfomationEmpoyer staff={staff}
 
@@ -74,7 +66,7 @@ function AppData() {
 				<NavbarToggler onClick={toggleNav} />
 				{/*<div class="row">*/}
 				<NavbarBrand className="mr-auto" href="/">
-					<img src={logo} height="30" width="41"  />
+					<img src={logo} height="30" width="41" />
 				</NavbarBrand>
 				<Collapse isOpen={isNavOpen} navbar>
 					<Nav navbar>
