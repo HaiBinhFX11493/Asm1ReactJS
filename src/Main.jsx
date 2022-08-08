@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
-
-
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter, NavLink } from "react-router-dom";
+import {
+	Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem,
+} from 'reactstrap';
+import { connect } from 'react-redux';
 import './App.css';
+
 import NhanVien from "./pages/nhanVien";
 import InfomationEmpoyer from "./pages/profileNv";
 import BangLuong from "./pages/bangLuong";
 import PhongBan from "./pages/./phongBan";
 import BotTomUI from "./BotTomUI";
-import {
-	Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem,
-} from 'reactstrap';
+
 import avartar from "./Components/images/alberto.png";
 import logo from "./Components/images/logo.png";
-import { NavLink } from 'react-router-dom';
 import { STAFFS, } from "./Components/StaffList/staffs";
-import { connect } from 'react-redux';
-
-
 
 
 // Hien thi title

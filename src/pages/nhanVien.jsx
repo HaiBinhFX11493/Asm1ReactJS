@@ -25,7 +25,7 @@ function BodyUI({ staffs, addStaff }) {
 	const [tenNv, setTenNv] = useState('')
 	const [findNv, setFindNv] = useState([])
 	const handleFindNv = () => {
-		var resultFilter = staffs.filter(ele => ele.name.split('').slice(-1).join('').toLowerCase() == tenNv.toLowerCase());
+		var resultFilter = staffs.filter(ele => ele.name.split('').slice(-1).join('').toLowerCase() === tenNv.toLowerCase());
 		if (resultFilter) {
 			return (setFindNv(resultFilter))
 		}
@@ -50,7 +50,7 @@ function BodyUI({ staffs, addStaff }) {
 
 			<div className="row"  >
 				{
-					findNv.length == 0 ?
+					findNv.length === 0 ?
 						staffs.map((e) => {
 							return (<DataNv key={e.id} data={e}
 							/>)
